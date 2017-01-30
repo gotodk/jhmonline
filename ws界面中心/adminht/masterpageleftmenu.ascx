@@ -12,12 +12,12 @@
             </button>
 
             <!-- #section:basics/sidebar.layout.shortcuts -->
-            <button class="btn btn-warning">
-                <i class="ace-icon fa fa-briefcase"  onclick="window.top.location.href='/adminht/corepage/fwbg/edit_bxsq.aspx'"></i>
-            </button>
+            <div class="btn btn-warning">
+               <a href="http://home.gotodk.cn:8090/" target="_blank" class="white">Git</a>
+            </div>
 
             <button class="btn btn-info">
-                <i class="ace-icon fa fa-file-word-o" onclick="window.top.location.href='/adminht/corepage/fwbg/edit_fwbg.aspx'"></i>
+                <a href="http://home.gotodk.cn:8888/" target="_blank" class="white">Pro</a>
             </button>
 
       
