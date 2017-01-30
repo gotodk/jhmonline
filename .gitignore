@@ -243,3 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/ws界面中心/uploadfiles/2017
+/IPC服务接口聚合/ForIPC/*.dll
+/ws核心业务中心/ForIPC/*.config
