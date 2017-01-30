@@ -1,0 +1,133 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>镜海盟-首页</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="/home/assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/home/assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="/home/assets/css/ie8.css" /><![endif]-->
+</head>
+	<body >
+		<div id="page-wrapper">
+
+			<!-- Header -->
+            <header id="header">
+                <h1><a href="/home/index.html">镜海盟</a> 欢迎你</h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/home/index.html">首页</a></li>
+                        <li>
+                            <a href="#" class="icon fa-angle-down">导航</a>
+                            <ul>
+                                <li><a href="http://home.gotodk.cn:8888/" target="_blank">协作平台</a></li>
+                                <li><a href="http://home.gotodk.cn:8090/" target="_blank">开源框架</a></li>
+                                <li><a href="/home/shalong.html">线下沙龙</a></li>
+                                <li><a href="/home/xiangmu.html">解决方案</a></li>
+                                <li><a href="/home/caiwu.html">财务咨询</a></li>
+                                <li><a href="/home/lianxi.html">联系我们</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="/adminht/login.aspx" class="button">登录</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+			<!-- Main -->
+				<section id="main" class="container 75%">
+					<header>
+						<h2>Contact Us</h2>
+						<p>Tell us what you think about our little operation.</p>
+					</header>
+					<div class="box">
+						<form method="post" action="#">
+							<div class="row uniform 50%">
+								<div class="6u 12u(mobilep)">
+									<input type="text" name="name" id="name" value="" placeholder="Name" />
+								</div>
+								 
+							</div>
+							<div class="row uniform 50%">
+								<div class="12u">
+									<input type="text" name="subject" id="subject" value="" placeholder="Subject" />
+								</div>
+							</div>
+							<div class="row uniform 50%">
+								<div class="12u">
+									<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+								</div>
+							</div>
+							<div class="row uniform">
+								<div class="12u">
+									<ul class="actions align-center">
+										<li><input type="submit" value="Send Message" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</section>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <!--<ul class="icons">
+            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+            <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+        </ul>-->
+                <ul class="copyright">
+                  
+                </ul>
+            </footer>
+
+		</div>
+
+        <!-- Scripts -->
+        <script src="/home/assets/js/jquery.min.js"></script>
+        <script src="/home/assets/js/jquery.dropotron.min.js"></script>
+        <script src="/home/assets/js/jquery.scrollgress.min.js"></script>
+        <script src="/home/assets/js/skel.min.js"></script>
+        <script src="/home/assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="/home/assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="/home/assets/js/main.js"></script>
+
+
+        <script type="text/javascript">
+        $(document).ready(function () {
+
+            function cd_callback(msg) {
+                $(".dropotron").html(msg);
+            };
+
+            $.ajax({
+                type: "GET",
+                url:  "/home/daohang.html",
+                dataType: "html",
+                data: "ajaxrun=hqdh&jkname=xx",
+                success: cd_callback
+            });
+
+            function ba_callback(msg) {
+                $(".copyright").html(msg);
+            };
+
+            $.ajax({
+                type: "GET",
+                url: "/home/beian.html",
+                dataType: "html",
+                data: "ajaxrun=hqba&jkname=xx",
+                success: ba_callback
+            });
+
+
+        });
+        </script>
+	</body>
+</html>

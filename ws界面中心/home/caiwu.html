@@ -1,0 +1,119 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>镜海盟-财务咨询</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="/home/assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/home/assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="/home/assets/css/ie8.css" /><![endif]-->
+</head>
+	<body>
+		<div id="page-wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <h1><a href="/home/index.html">镜海盟</a> 欢迎你</h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/home/index.html">首页</a></li>
+                        <li>
+                            <a href="#" class="icon fa-angle-down">导航</a>
+                            <ul>
+                               
+                            </ul>
+                        </li>
+                        <li><a href="/adminht/login.aspx" class="button">登录</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>财务咨询</h2>
+						<p>免费提供初创公司账目管理指导服务。有偿会计知识培训，财务咨询服务，代理记账服务。</p>
+					</header>
+           
+					<div class="box">
+						
+						<h3>xxxxx</h3>
+                        <p>xxxxx</p>
+                       
+                      
+						<div class="row">
+							<div class="6u 12u(mobilep)">
+								<h3>xxx</h3>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xxxxxx</p>
+							</div>
+							<div class="6u 12u(mobilep)">
+								<h3>xxxx</h3>
+								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xxxxxx</p>
+							</div>
+						</div>
+					</div>
+				</section>
+            <!-- CTA -->
+     
+			<!-- Footer -->
+ 
+            <footer id="footer">
+      
+                <ul class="copyright">
+                    
+                </ul>
+            </footer>
+
+		</div>
+
+        <!-- Scripts -->
+        <script src="/home/assets/js/jquery.min.js"></script>
+        <script src="/home/assets/js/jquery.dropotron.min.js"></script>
+        <script src="/home/assets/js/jquery.scrollgress.min.js"></script>
+        <script src="/home/assets/js/skel.min.js"></script>
+        <script src="/home/assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="/home/assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="/home/assets/js/main.js"></script>
+
+        <script type="text/javascript">
+        $(document).ready(function () {
+
+            function cd_callback(msg) {
+                $(".dropotron").html(msg);
+            };
+
+            $.ajax({
+                type: "GET",
+                url:  "/home/daohang.html",
+                dataType: "html",
+                data: "ajaxrun=hqdh&jkname=xx",
+                success: cd_callback
+            });
+
+            function ba_callback(msg) {
+                $(".copyright").html(msg);
+            };
+
+            $.ajax({
+                type: "GET",
+                url: "/home/beian.html",
+                dataType: "html",
+                data: "ajaxrun=hqba&jkname=xx",
+                success: ba_callback
+            });
+
+
+        });
+        </script>
+
+	</body>
+</html>
