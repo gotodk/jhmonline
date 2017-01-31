@@ -59,16 +59,16 @@ public class NoReSet_160114000014
         //以可排序guid方式生成
         //string guid = CombGuid.GetNewCombGuid("D"); 
         //用登录账号作为内码
-        string guid = ht_forUI["Uloginname"].ToString();
-        System.Text.RegularExpressions.Regex reg1 = new System.Text.RegularExpressions.Regex(@"^[0-9]\d*$");
-        bool regre = reg1.IsMatch(guid);
-        if (!regre)
+        //string guid = ht_forUI["Uloginname"].ToString();
+        //System.Text.RegularExpressions.Regex reg1 = new System.Text.RegularExpressions.Regex(@"^\w+$");
+        //bool regre = reg1.IsMatch(ht_forUI["Uloginname"].ToString());
+        if (ht_forUI["Uloginname"].ToString().IndexOf('<') >=0 || ht_forUI["Uloginname"].ToString().IndexOf('>') >= 0)
         {
             dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
-            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "错误：登录账号必须全是数字，以工号作为登录账号！";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "错误：登录账号含有禁用字符！";
             return dsreturn;
         }
-        //string guid = CombGuid.GetNewCombGuid("U");
+        string guid = CombGuid.GetNewCombGuid("U");
         param.Add("@UAid", guid);
         param.Add("@Uloginname", ht_forUI["Uloginname"].ToString());
 
@@ -149,6 +149,16 @@ public class NoReSet_160114000014
             dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "没有明确的修改目标！";
             return dsreturn;
         }
+
+        //System.Text.RegularExpressions.Regex reg1 = new System.Text.RegularExpressions.Regex(@"^\w+$");
+        //bool regre = reg1.IsMatch(ht_forUI["Uloginname"].ToString());
+        if (ht_forUI["Uloginname"].ToString().IndexOf('<') >= 0 || ht_forUI["Uloginname"].ToString().IndexOf('>') >= 0)
+        {
+            dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
+            dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "错误：登录账号含有禁用字符！";
+            return dsreturn;
+        }
+
         //开始真正的处理，这里只是演示，所以直接在这里写业务逻辑代码了
 
         I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");

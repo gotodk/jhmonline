@@ -64,7 +64,7 @@
 										<div class="widget-main">
 											<h4 class="header blue lighter bigger">
 												<i class="ace-icon fa fa-coffee green"></i>
-												管理登录
+												登录
 											</h4>
 
 											<div class="space-6"></div>

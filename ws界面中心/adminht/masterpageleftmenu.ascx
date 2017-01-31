@@ -7,7 +7,7 @@
 
     <div class="sidebar-shortcuts" id="sidebar-shortcuts">
         <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-            <button class="btn btn-success" onclick="window.top.location.href='/adminht/demo_home.aspx'">
+            <button class="btn btn-success" onclick="window.top.location.href='/home/index.html'">
                 <i class="ace-icon fa fa-home"></i>
             </button>
 
