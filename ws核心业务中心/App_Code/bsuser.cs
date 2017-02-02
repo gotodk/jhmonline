@@ -115,18 +115,18 @@ public class bsuser : System.Web.Services.WebService
 
             if (redb.Rows.Count < 1)
             {
-                return "err|邀请码不存在！";
+                return "err|您提供的邀请码不存在！";
             }
             else
             {
                 DataRow dr = redb.Rows[0];
                 if (dr["joinok"].ToString() != "未使用")
                 {
-                    return "err|一个验证码只能接受一次邀请，此邀请码已被他人使用，请联系您的朋友获取新的有效邀请码！";
+                    return "err|一个邀请码只能接受一次邀请，此邀请码已被他人使用！";
                 }
                 else
                 {
-                    return "ok|恭喜您，邀请码有效，此验证码是来自"+ dr["userid_name"].ToString() + "的邀请！";
+                    return "ok|邀请码有效，此验证码是来自“"+ dr["userid_name"].ToString() + "”的邀请！";
                 }
                
             }
@@ -138,6 +138,37 @@ public class bsuser : System.Web.Services.WebService
         }
 
          
+    }
+
+
+
+
+
+
+    /// <summary>
+    /// 提交注册资料
+    /// </summary>
+    /// <param name="parameter_forUI">参数</param>
+    /// <returns>返回ok就是接口正常</returns>
+    [WebMethod(MessageName = "提交注册资料", Description = "提交注册资料")]
+    public string tijiaozhuceziliao(DataTable parameter_forUI)
+    {
+        //接收转换参数
+        Hashtable ht_forUI = new Hashtable();
+        for (int i = 0; i < parameter_forUI.Rows.Count; i++)
+        {
+            ht_forUI[parameter_forUI.Rows[i]["参数名"].ToString()] = parameter_forUI.Rows[i]["参数值"].ToString();
+        }
+
+        //进行详细的注册资料合法性验证
+
+        //进行验证码的验证
+
+        //保存注册信息
+
+        return "err|mima|欢迎您正式加入镜海盟！";
+
+
     }
 
 

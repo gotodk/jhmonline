@@ -130,8 +130,8 @@
 											</div>
 
 											<div>
-												<a href="/home/invitation.html"  class="user-signup-link">
-													接受邀请
+												<a href="/home/invitation.html"  class="forgot-password-link">
+													我有邀请码
 													<i class="ace-icon fa fa-arrow-right"></i>
 												</a>
 											</div>

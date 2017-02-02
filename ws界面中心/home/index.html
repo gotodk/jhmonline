@@ -10,6 +10,8 @@
     <!--[if lte IE 8]><script src="/home/assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="/home/assets/css/main.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="/home/assets/css/ie8.css" /><![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/home/assets/css/sweetalert.css">
 </head>
 <body class="landing">
     <div id="page-wrapper">
@@ -164,7 +166,7 @@
                         <input type="text" name="yaoqingma" id="yaoqingma" placeholder="邀请码" />
                     </div>
                     <div class="4u 12u(mobilep)">
-                        <input type="submit" value="验证" class="fit" />
+                        <input type="button" name="yqmbu" id="yqmbu" value="验证" class="fit" />
                     </div>
                 </div>
             </form>
@@ -199,7 +201,7 @@
 
 
     <script src="/home/assets/js/particles.min.js"></script>
-
+    <script src="/home/assets/js/sweetalert.min.js"></script>
 
     <script type="text/javascript">
         particlesJS('particles-js',
@@ -387,6 +389,40 @@
                 success: ba_callback
             });
 
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#yaoqingma")[0].focus();
+            //邀请码
+            $(document).on('click', "#yqmbu", function () {
+                var yqmstr = $.trim($("#yaoqingma").val().toUpperCase());
+
+
+                function yqm_callback(msg) {
+                    if (msg.indexOf("ok|") == 0)
+                    {
+                        //swal("验证码有效", msg.replace("ok|", ""), "success", function () { alert('dd'); });
+
+                        swal({ title: "验证码有效", text: msg.replace("ok|", ""), type: "success", showCancelButton: false, closeOnConfirm: false, showLoaderOnConfirm: false, confirmButtonText: "接受邀请并注册", confirmButtonColor: "#DD6B55", cancelButtonText: "取消" }, function () { window.location.href = "/home/joinus.html?yqmstr=" + yqmstr; });
+                    }
+                    else
+                    { $("#yaoqingma")[0].focus(); swal("验证失败", msg.replace("err|", ""), "error"); }
+
+                    //swal("验证结果", "msg", "error");
+                };
+
+                $.ajax({
+                    type: "GET",
+                    url: "/adminht/corepage/dangan/ddzx_yqm.aspx",
+                    dataType: "html",
+                    data: "yqmstr=" + yqmstr,
+                    success: yqm_callback
+                });
+
+            });
 
         });
     </script>

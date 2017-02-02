@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ddzx_yqm.aspx.cs" Inherits="adminht_corepage_dangan_ddzx_yqm" %>
