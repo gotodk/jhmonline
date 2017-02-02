@@ -4,6 +4,8 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+
 (function($) {
 
 	skel.breakpoints({
@@ -15,6 +17,8 @@
 		mobilep: '(max-width: 480px)'
 	});
 
+	
+
 	$(function() {
 
 		var	$window = $(window),
@@ -25,6 +29,7 @@
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
 
+        
 		// Prioritize "important" elements on narrower.
 			skel.on('+narrower -narrower', function() {
 				$.prioritize(
@@ -33,45 +38,8 @@
 				);
 			});
 
-		// Dropdowns.
-			$('#nav > ul').dropotron({
-				alignment: 'right'
-			});
 
-		// Off-Canvas Navigation.
-
-			// Navigation Button.
-				$(
-					'<div id="navButton">' +
-						'<a href="#navPanel" class="toggle"></a>' +
-					'</div>'
-				)
-					.appendTo($body);
-
-			// Navigation Panel.
-				$(
-					'<div id="navPanel">' +
-						'<nav>' +
-							$('#nav').navList() +
-						'</nav>' +
-					'</div>'
-				)
-					.appendTo($body)
-					.panel({
-						delay: 500,
-						hideOnClick: true,
-						hideOnSwipe: true,
-						resetScroll: true,
-						resetForms: true,
-						side: 'left',
-						target: $body,
-						visibleClass: 'navPanel-visible'
-					});
-
-			// Fix: Remove navPanel transitions on WP<10 (poor/buggy performance).
-				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#navButton, #navPanel, #page-wrapper')
-						.css('transition', 'none');
+	
 
 		// Header.
 		// If the header is using "alt" styling and #banner is present, use scrollwatch
@@ -94,6 +62,78 @@
 				});
 
 			}
+
+
+			function op_load_caidan() {
+			    // Dropdowns.
+			    $('#nav > ul').dropotron({
+			        alignment: 'right'
+			    });
+
+			    // Off-Canvas Navigation.
+
+			    // Navigation Button.
+			    $(
+                    '<div id="navButton">' +
+                        '<a href="#navPanel" class="toggle"></a>' +
+                    '</div>'
+                )
+                    .appendTo($('body'));
+
+			    // Navigation Panel.
+			    $(
+                    '<div id="navPanel">' +
+                        '<nav>' +
+                            $('#nav').navList() +
+                        '</nav>' +
+                    '</div>'
+                )
+                    .appendTo($('body'))
+                    .panel({
+                        delay: 500,
+                        hideOnClick: true,
+                        hideOnSwipe: true,
+                        resetScroll: true,
+                        resetForms: true,
+                        side: 'left',
+                        target: $('body'),
+                        visibleClass: 'navPanel-visible'
+                    });
+
+			    // Fix: Remove navPanel transitions on WP<10 (poor/buggy performance).
+			    if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
+			        $('#navButton, #navPanel, #page-wrapper')
+                        .css('transition', 'none');
+			}
+
+
+			function cd_callback(msg) {
+			    $("#opcaidan").html(msg);
+			    op_load_caidan();
+			};
+
+			$.ajax({
+			    type: "GET",
+			    url: "/home/daohang.html",
+			    dataType: "html",
+			    data: "ajaxrun=hqdh&jkname=xx",
+			    success: cd_callback
+			});
+
+			function ba_callback(msg) {
+			    $(".copyright").html(msg);
+			};
+
+			$.ajax({
+			    type: "GET",
+			    url: "/home/beian.html",
+			    dataType: "html",
+			    data: "ajaxrun=hqba&jkname=xx",
+			    success: ba_callback
+			});
+
+
+
 
 	});
 

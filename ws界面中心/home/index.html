@@ -24,7 +24,7 @@
                     <li><a href="/home/index.html">首页</a></li>
                     <li>
                         <a href="#" class="icon fa-angle-down">导航</a>
-                        <ul>
+                        <ul id="opcaidan">
                          
                         </ul>
                     </li>
@@ -362,36 +362,7 @@
 
     </script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            function cd_callback(msg) {
-                $(".dropotron").html(msg);
-            };
-
-            $.ajax({
-                type: "GET",
-                url:  "/home/daohang.html",
-                dataType: "html",
-                data: "ajaxrun=hqdh&jkname=xx",
-                success: cd_callback
-            });
-
-            function ba_callback(msg) {
-                $(".copyright").html(msg);
-            };
-
-            $.ajax({
-                type: "GET",
-                url: "/home/beian.html",
-                dataType: "html",
-                data: "ajaxrun=hqba&jkname=xx",
-                success: ba_callback
-            });
-
-
-        });
-    </script>
+ 
 
     <script type="text/javascript">
         $(document).ready(function () {

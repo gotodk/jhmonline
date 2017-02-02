@@ -24,7 +24,7 @@
                         <li><a href="/home/index.html">首页</a></li>
                         <li>
                             <a href="#" class="icon fa-angle-down">导航</a>
-                            <ul>
+                            <ul id="opcaidan">
                                 
                             </ul>
                         </li>
@@ -188,6 +188,7 @@
 
         <!-- Scripts -->
         <script src="/home/assets/js/jquery.min.js"></script>
+  
         <script src="/home/assets/js/jquery.dropotron.min.js"></script>
         <script src="/home/assets/js/jquery.scrollgress.min.js"></script>
         <script src="/home/assets/js/skel.min.js"></script>
@@ -197,36 +198,7 @@
 
         <script src="/home/assets/js/sweetalert.min.js"></script>
 
-        <script type="text/javascript">
-        $(document).ready(function () {
 
-            function cd_callback(msg) {
-                $(".dropotron").html(msg);
-            };
-
-            $.ajax({
-                type: "GET",
-                url:  "/home/daohang.html",
-                dataType: "html",
-                data: "ajaxrun=hqdh&jkname=xx",
-                success: cd_callback
-            });
-
-            function ba_callback(msg) {
-                $(".copyright").html(msg);
-            };
-
-            $.ajax({
-                type: "GET",
-                url: "/home/beian.html",
-                dataType: "html",
-                data: "ajaxrun=hqba&jkname=xx",
-                success: ba_callback
-            });
-
-
-        });
-        </script>
 
 
         <script type="text/javascript">
@@ -256,6 +228,7 @@
                 //获取参数
             var yqmstr = $.trim(getUrlParam("yqmstr").toUpperCase());
             $("#yaoqingma").val(yqmstr);
+            $("#zhanghao")[0].focus();
 
             function yqm_callback(msg) {
                 $("#tsmsg_yqm").html(msg.replace("ok|", "").replace("err|", ""));
@@ -291,6 +264,7 @@
                     reerr = msg.split("|"); //字符分割 
 
                     $("#" + reerr[1])[0].focus();
+                    $(document).scrollTop($("#" + reerr[1]).offset().top-400);
                     swal({ title: "注册失败，原因如下", text: reerr[2], type: "error", showCancelButton: false, closeOnConfirm: true, showLoaderOnConfirm: false, confirmButtonText: "调整资料", confirmButtonColor: "#DD6B55", cancelButtonText: "取消" }, function () { });
                     
                 }

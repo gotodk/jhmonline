@@ -1,9 +1,5 @@
 ﻿<!DOCTYPE HTML>
-<!--
-	Alpha by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+ 
 <html>
 <head>
     <title>镜海盟-顾问联盟</title>
@@ -27,7 +23,7 @@
                         <li><a href="/home/index.html">首页</a></li>
                         <li>
                             <a href="#" class="icon fa-angle-down">导航</a>
-                            <ul>
+                            <ul id="opcaidan">
                               
                             </ul>
                         </li>
@@ -83,36 +79,6 @@
         <script src="/home/assets/js/util.js"></script>
         <!--[if lte IE 8]><script src="/home/assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="/home/assets/js/main.js"></script>
-
-        <script type="text/javascript">
-        $(document).ready(function () {
-
-            function cd_callback(msg) {
-                $(".dropotron").html(msg);
-            };
-
-            $.ajax({
-                type: "GET",
-                url:  "/home/daohang.html",
-                dataType: "html",
-                data: "ajaxrun=hqdh&jkname=xx",
-                success: cd_callback
-            });
-
-            function ba_callback(msg) {
-                $(".copyright").html(msg);
-            };
-
-            $.ajax({
-                type: "GET",
-                url: "/home/beian.html",
-                dataType: "html",
-                data: "ajaxrun=hqba&jkname=xx",
-                success: ba_callback
-            });
-
-
-        });
-        </script>
+ 
 	</body>
 </html>
