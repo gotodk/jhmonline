@@ -51,6 +51,26 @@ public class NoReSet_160114000014
         dsreturn.Tables["返回值单条"].Rows.Add(new string[] { "err", "初始化" });
         //参数合法性各种验证，这里要根据具体业务逻辑处理
 
+
+        //如果填写了邀请码，验证邀请码是否可用
+        string yqm = ht_forUI["yaoqingma"].ToString().ToUpper().Trim();
+        if(yqm != "")
+        {
+            bsuser bu = new bsuser();
+            string rerere = bu.checkyqm(yqm);
+            if (rerere.IndexOf("ok|") == 0)
+            {
+
+            }
+            else
+            {
+                dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "err";
+                dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = rerere;
+                return dsreturn;
+            }
+        }
+        
+
         //开始真正的处理，根据业务逻辑操作数据库
         I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
         Hashtable return_ht = new Hashtable();
@@ -91,6 +111,9 @@ public class NoReSet_160114000014
         param.Add("@youxiang", ht_forUI["youxiang"].ToString());
         param.Add("@lingdao", ht_forUI["lingdao"].ToString());
 
+        param.Add("@ss_yaoqingma", yqm);
+
+
         if (ht_forUI["zhuangtai"].ToString() == "离职")
         { param.Add("@Uattrcode", "1"); }
         else
@@ -99,7 +122,13 @@ public class NoReSet_160114000014
 
         alsql.Add("INSERT INTO  auth_users_auths(UAid ,Uloginname,Uloginpassword,Uattrcode) VALUES(@UAid ,@Uloginname,@Uloginpassword,@Uattrcode )");
 
-        alsql.Add("INSERT INTO  ZZZ_userinfo(UAid ,xingming,zhuangtai,zhiwei,xingbie,beizhu,gongzuodi,suoshuquyu,shoujihao,gudingdianhua,youxiang,lingdao) VALUES(@UAid ,@xingming,@zhuangtai,@zhiwei,@xingbie,@beizhu,@gongzuodi,@suoshuquyu,@shoujihao,@gudingdianhua,@youxiang,@lingdao)");
+        alsql.Add("INSERT INTO  ZZZ_userinfo(UAid ,xingming,zhuangtai,zhiwei,xingbie,beizhu,gongzuodi,suoshuquyu,shoujihao,gudingdianhua,youxiang,lingdao,ss_yaoqingma) VALUES(@UAid ,@xingming,@zhuangtai,@zhiwei,@xingbie,@beizhu,@gongzuodi,@suoshuquyu,@shoujihao,@gudingdianhua,@youxiang,@lingdao,@ss_yaoqingma)");
+
+        if (yqm != "")
+        {
+            alsql.Add("update AAA_SJS set joinok=1,joinuser=@UAid,joinsj=getdate() where SN=@ss_yaoqingma and beok=1");
+        }
+           
 
         //设置初始权限组
         if (ht_forUI.Contains("morenqanxianshezhi") && ht_forUI["morenqanxianshezhi"].ToString() != "")
@@ -107,6 +136,7 @@ public class NoReSet_160114000014
             param.Add("@morenqanxianshezhi", ht_forUI["morenqanxianshezhi"].ToString());
             alsql.Add("update auth_users_auths set Uingroups=@morenqanxianshezhi where UAid=@UAid");
         }
+        
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
 

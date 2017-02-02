@@ -93,5 +93,52 @@ public class bsuser : System.Web.Services.WebService
     }
 
 
+    /// <summary>
+    /// 验证邀请码是否可用于本次接受邀请。返回是否可用，并返回具体内容
+    /// </summary>
+    /// <param name="yqm"></param>
+    /// <returns></returns>
+    [WebMethod(MessageName = "邀请码检查", Description = "邀请码检查")]
+    public string checkyqm(string yqm)
+    {
+      
+        I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
+        Hashtable return_ht = new Hashtable();
+        Hashtable param = new Hashtable();
+        param.Add("@SN", yqm);
+
+        return_ht = I_DBL.RunParam_SQL("select top 1 * from View_J_my_yqm_fflist where SN=@SN ", "数据记录", param);
+
+        if ((bool)(return_ht["return_float"]))
+        {
+            DataTable redb = ((DataSet)return_ht["return_ds"]).Tables["数据记录"].Copy();
+
+            if (redb.Rows.Count < 1)
+            {
+                return "err|邀请码不存在！";
+            }
+            else
+            {
+                DataRow dr = redb.Rows[0];
+                if (dr["joinok"].ToString() != "未使用")
+                {
+                    return "err|一个验证码只能接受一次邀请，此邀请码已被他人使用，请联系您的朋友获取新的有效邀请码！";
+                }
+                else
+                {
+                    return "ok|恭喜您，邀请码有效，此验证码是来自"+ dr["userid_name"].ToString() + "的邀请！";
+                }
+               
+            }
+
+        }
+        else
+        {
+            return "err|错误err，系统异常！";
+        }
+
+         
+    }
+
 
 }

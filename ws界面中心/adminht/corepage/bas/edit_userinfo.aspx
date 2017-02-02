@@ -32,6 +32,7 @@
                 if (getUrlParam("fff") == "1") {
 
                     $("#morenqanxianshezhi").closest(".form-group").hide();
+                    $("#yaoqingma").closest(".form-group").hide();
                 }
 
                 var dfx_str = "#show_searchopenyhbspgogo_suoshuquyu";
