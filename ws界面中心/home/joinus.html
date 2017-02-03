@@ -347,11 +347,16 @@
                         else
                         {
                             if (msg == "号码格式不正确") {
+                                $("#shoujihao")[0].focus();
+                                $(document).scrollTop($("#shoujihao").offset().top - 400);
+
                                 $("#fs_shoujihao").val("发送验证码");
                                 $("#fs_shoujihao").removeAttr("disabled");
                                 $("#fs_shoujihao").show();
                                 $("#fs_msg_h").html("");
-                                $("#yaoqingma")[0].focus(); swal("无法发送", msg, "error");
+                                $("#shoujihao")[0].focus();
+                                $(document).scrollTop($("#shoujihao").offset().top - 400);
+                                swal("无法发送", msg, "error");
                                
                             }
                             else {
