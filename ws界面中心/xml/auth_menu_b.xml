@@ -70,7 +70,12 @@
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
     <SortOrder>3</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=195</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├事务申请</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
@@ -82,7 +87,7 @@
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
     <SortOrder>4</SortOrder>
-    <m_url />
+    <m_url>/adminht/corepage/nono.aspx?ssstt=200</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
@@ -116,7 +121,12 @@
     <SortParentID>189</SortParentID>
     <SortParentPath>,189,</SortParentPath>
     <SortOrder>6</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=196</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├我的贡献</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-3</SortMoveDown>
@@ -140,7 +150,12 @@
     <SortParentID>197</SortParentID>
     <SortParentPath>,189,197,</SortParentPath>
     <SortOrder>8</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=213</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>││├基础档案</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-2</SortMoveDown>
@@ -152,7 +167,12 @@
     <SortParentID>197</SortParentID>
     <SortParentPath>,189,197,</SortParentPath>
     <SortOrder>9</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=214</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>││├能力档案</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
@@ -164,7 +184,12 @@
     <SortParentID>197</SortParentID>
     <SortParentPath>,189,197,</SortParentPath>
     <SortOrder>10</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=215</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>││└扩展档案</SortNameTree>
     <SortMoveUp>2</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
@@ -227,7 +252,12 @@
     <SortParentID>189</SortParentID>
     <SortParentPath>,189,</SortParentPath>
     <SortOrder>14</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=199</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│└邀请记录</SortNameTree>
     <SortMoveUp>3</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
@@ -256,7 +286,7 @@
     <SortParentID>185</SortParentID>
     <SortParentPath>,185,</SortParentPath>
     <SortOrder>16</SortOrder>
-    <m_url />
+    <m_url>/adminht/corepage/nono.aspx?ssstt=201</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
@@ -273,7 +303,12 @@
     <SortParentID>185</SortParentID>
     <SortParentPath>,185,</SortParentPath>
     <SortOrder>17</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=202</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│└项目推荐</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
@@ -302,7 +337,12 @@
     <SortParentID>187</SortParentID>
     <SortParentPath>,187,</SortParentPath>
     <SortOrder>19</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=204</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├活动倡议</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-2</SortMoveDown>
@@ -314,7 +354,12 @@
     <SortParentID>187</SortParentID>
     <SortParentPath>,187,</SortParentPath>
     <SortOrder>20</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=205</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├查阅计划</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
@@ -326,7 +371,12 @@
     <SortParentID>187</SortParentID>
     <SortParentPath>,187,</SortParentPath>
     <SortOrder>21</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=203</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│└历史活动</SortNameTree>
     <SortMoveUp>2</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
@@ -355,7 +405,12 @@
     <SortParentID>188</SortParentID>
     <SortParentPath>,188,</SortParentPath>
     <SortOrder>23</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=206</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├查阅宪章</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-2</SortMoveDown>
@@ -367,7 +422,12 @@
     <SortParentID>188</SortParentID>
     <SortParentPath>,188,</SortParentPath>
     <SortOrder>24</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=208</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├查阅补充规范</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
@@ -379,7 +439,7 @@
     <SortParentID>188</SortParentID>
     <SortParentPath>,188,</SortParentPath>
     <SortOrder>25</SortOrder>
-    <m_url />
+    <m_url>/adminht/corepage/nono.aspx?ssstt=207</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
@@ -413,7 +473,7 @@
     <SortParentID>191</SortParentID>
     <SortParentPath>,191,</SortParentPath>
     <SortOrder>27</SortOrder>
-    <m_url />
+    <m_url>/adminht/corepage/nono.aspx?ssstt=193</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
@@ -430,7 +490,12 @@
     <SortParentID>191</SortParentID>
     <SortParentPath>,191,</SortParentPath>
     <SortOrder>28</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=194</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│└合同档案</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
@@ -459,7 +524,12 @@
     <SortParentID>192</SortParentID>
     <SortParentPath>,192,</SortParentPath>
     <SortOrder>30</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=209</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│├常规记账</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
@@ -471,7 +541,12 @@
     <SortParentID>192</SortParentID>
     <SortParentPath>,192,</SortParentPath>
     <SortOrder>31</SortOrder>
+    <m_url>/adminht/corepage/nono.aspx?ssstt=210</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
     <SortNameTree>│└上传备份</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>

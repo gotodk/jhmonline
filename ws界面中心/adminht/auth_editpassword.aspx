@@ -249,15 +249,15 @@
                     rules: {
                         mima_old: {
                             required: true,
-                            minlength: 6
+                            minlength: 1
                         },
                         mima_new: {
                             required: true,
-                            minlength: 6
+                            minlength: 1
                         },
                         mima_new_re: {
                             required: true,
-                            minlength: 6,
+                            minlength: 1,
                             equalTo: "#mima_new"
                         }
 
@@ -267,15 +267,15 @@
                        
                         mima_old: {
                             required: "必须填写原始密码",
-                            minlength: "密码至少6位"
+                            minlength: "密码至少1位"
                         },
                         mima_new: {
                             required: "必须填写新密码",
-                            minlength: "密码至少6位"
+                            minlength: "密码至少1位"
                         },
                         mima_new_re: {
                             required: "必须重复填写一遍新密码",
-                            minlength: "密码至少6位",
+                            minlength: "密码至少1位",
                             equalTo: "重复密码必须与新密码一致"
                         }
                     },

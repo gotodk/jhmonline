@@ -9,6 +9,7 @@ using System.Data;
 using FMPublicClass;
 using System.Web.Script.Serialization;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 /// <summary>
 /// 核心业务的相关处理接口
@@ -141,7 +142,45 @@ public class bsuser : System.Web.Services.WebService
     }
 
 
+    /// <summary>
+    /// 账号信息重复检查，可验证账号，昵称，手机，邮箱
+    /// </summary>
+    /// <param name="ddstr">待检查的字符串</param>
+    /// <param name="lx">字段名称</param>
+    /// <returns></returns>
+    [WebMethod(MessageName = "账号信息重复检查", Description = "账号信息重复检查")]
+    public string check_pp_zh(string ddstr,string lx)
+    {
 
+        I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
+        Hashtable return_ht = new Hashtable();
+        Hashtable param = new Hashtable();
+        param.Add("@ddstr", ddstr.Trim());
+
+        return_ht = I_DBL.RunParam_SQL("select top 1 UAid from view_ZZZ_userinfo_ex where "+ lx + "=@ddstr ", "数据记录", param);
+
+        if ((bool)(return_ht["return_float"]))
+        {
+            DataTable redb = ((DataSet)return_ht["return_ds"]).Tables["数据记录"].Copy();
+
+            if (redb.Rows.Count < 1)
+            {
+                return "ok";
+            }
+            else
+            {
+                return "err|有重复";
+
+            }
+
+        }
+        else
+        {
+            return "err|检查出错";
+        }
+
+
+    }
 
 
 
@@ -161,13 +200,159 @@ public class bsuser : System.Web.Services.WebService
         }
 
         //进行详细的注册资料合法性验证
+        if (ht_forUI["zhanghao"].ToString().Trim() == "")
+        {
+            return "err|zhanghao|没有填写“登录账号”！";
+        }
+        if (ht_forUI["zhanghao"].ToString().Trim().IndexOf('>') >=0 || ht_forUI["zhanghao"].ToString().Trim().IndexOf('<') >= 0)
+        {
+            return "err|zhanghao|“登录账号”含有禁用字符！";
+        }
+        string jc_zh = check_pp_zh(ht_forUI["zhanghao"].ToString().Trim(), "Uloginname") ;
+        if (jc_zh != "ok")
+        {
+            return "err|zhanghao|“登录账号”已被使用，请更换！";
+        }
 
-        //进行验证码的验证
+        if (ht_forUI["mima"].ToString().Trim() == "")
+        {
+            return "err|mima|没有填写“登录密码”！";
+        }
+        if (ht_forUI["mima"].ToString().IndexOf(" ") >= 0 || Regex.IsMatch(ht_forUI["mima"].ToString(), @"[\u4e00-\u9fa5]"))
+        {
+            return "err|mima|“登录密码”中不允许含有空格和中文！";
+        }
+
+        if (ht_forUI["mima"].ToString() != ht_forUI["remima"].ToString())
+        {
+            return "err|remima|“重复密码”与“登录密码”不一致！";
+        }
+        if (ht_forUI["nicheng"].ToString().Trim() == "")
+        {
+            return "err|nicheng|没有填写“昵称”！";
+        }
+        string jc_nc = check_pp_zh(ht_forUI["nicheng"].ToString().Trim(), "xingming");
+        if (jc_nc != "ok")
+        {
+            return "err|zhanghao|“昵称”已被使用，请更换！";
+        }
+
+
+        if (ht_forUI["shoujihao"].ToString().Trim() == "")
+        {
+            return "err|shoujihao|没有填写“手机号码”！";
+        }
+        //string jc_sj = check_pp_zh(ht_forUI["shoujihao"].ToString().Trim(), "shoujihao");
+        //if (jc_sj != "ok")
+        //{
+        //    return "err|zhanghao|“手机号码”已被使用，请更换！";
+        //}
+        string sjh = ht_forUI["shoujihao"].ToString().Trim();
+        Regex reg1 = new Regex(@"^[0-9]\d*$");
+        if (sjh.Length != 11 || !reg1.IsMatch(sjh))
+        {
+            return "err|shoujihao|“手机号码”格式不正确！";
+        }
+
+
+        //进行短信验证码的验证
+        if (ht_forUI["dxyzm"].ToString().Trim() == "")
+        {
+            return "err|dxyzm|没有填写“短信验证码”！";
+        }
+        string sjh_enc = StringOP.encMe(sjh, "mima");
+        //取出数字，换算出验证码
+        string yzm = Regex.Replace(sjh_enc, "[a-z]", "", RegexOptions.IgnoreCase);
+        yzm = yzm.PadLeft(100, '0');
+        yzm = yzm.Substring(95, 4);
+        if (ht_forUI["dxyzm"].ToString().Trim() != yzm)
+        {
+            return "err|dxyzm|“短信验证码”有误！";
+        }
+
+
+
+        if (!ht_forUI.Contains("ppxingbie") || (ht_forUI["ppxingbie"].ToString().Trim() != "男" && ht_forUI["ppxingbie"].ToString().Trim() != "女"))
+        {
+            return "err|ppxingbie|没有选择“性别”！";
+        }
+        if (ht_forUI["yaoqingma"].ToString().Trim() == "")
+        {
+            return "err|yaoqingma|没有填写“邀请码”！";
+        }
+
+        
+
+        //进行邀请码的验证
+        string yqm = ht_forUI["yaoqingma"].ToString().ToUpper().Trim();
+        string rerere = checkyqm(yqm);
+        if (rerere.IndexOf("ok|") == 0)
+        {
+
+        }
+        else
+        {
+            return "err|yaoqingma|" + rerere.Replace("err|","");
+        }
 
         //保存注册信息
 
-        return "err|mima|欢迎您正式加入镜海盟！";
+        //开始真正的处理，根据业务逻辑操作数据库
+        I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
+        Hashtable return_ht = new Hashtable();
+        ArrayList alsql = new ArrayList();
+        Hashtable param = new Hashtable();
+        //以可排序guid方式生成
+        string guid = CombGuid.GetNewCombGuid("U");
+        param.Add("@UAid", guid);
+        param.Add("@Uloginname", ht_forUI["zhanghao"].ToString().Trim());
 
+        //对密码进行加密
+        string mima_enc = StringOP.encMe(ht_forUI["mima"].ToString().Trim(), "mima");
+        param.Add("@Uloginpassword", mima_enc);
+
+        param.Add("@xingming", ht_forUI["nicheng"].ToString());
+        param.Add("@zhuangtai", "在职");
+        param.Add("@zhiwei", "见习盟友");
+        param.Add("@xingbie", ht_forUI["ppxingbie"].ToString().Trim());
+
+
+        param.Add("@beizhu", "");
+
+        param.Add("@gongzuodi", "");
+        param.Add("@suoshuquyu", "1");//默认镜海盟部门
+        param.Add("@shoujihao", ht_forUI["shoujihao"].ToString().Trim());
+        param.Add("@gudingdianhua", "");
+        param.Add("@youxiang", "");
+        param.Add("@lingdao", "否");
+
+        param.Add("@ss_yaoqingma", yqm);
+
+        param.Add("@Uattrcode", "-1");
+
+        //插入账号表
+        alsql.Add("INSERT INTO  auth_users_auths(UAid ,Uloginname,Uloginpassword,Uattrcode) VALUES(@UAid ,@Uloginname,@Uloginpassword,@Uattrcode )");
+        alsql.Add("INSERT INTO  ZZZ_userinfo(UAid ,xingming,zhuangtai,zhiwei,xingbie,beizhu,gongzuodi,suoshuquyu,shoujihao,gudingdianhua,youxiang,lingdao,ss_yaoqingma) VALUES(@UAid ,@xingming,@zhuangtai,@zhiwei,@xingbie,@beizhu,@gongzuodi,@suoshuquyu,@shoujihao,@gudingdianhua,@youxiang,@lingdao,@ss_yaoqingma)");
+        //更新邀请码使用状态
+        alsql.Add("update AAA_SJS set joinok=1,joinuser=@UAid,joinsj=getdate() where SN=@ss_yaoqingma and beok=1");
+
+
+        //设置初始权限组
+        param.Add("@morenqanxianshezhi", "25");//默认见习盟友
+        alsql.Add("update auth_users_auths set Uingroups=@morenqanxianshezhi where UAid=@UAid");
+
+        return_ht = I_DBL.RunParam_SQL(alsql, param);
+
+        if ((bool)(return_ht["return_float"]))
+        {
+            return "ok|欢迎您正式成为镜海盟的一员！";
+        }
+        else
+        {
+            return "err|xxxx|"+ "系统故障，保存失败：" + return_ht["return_errmsg"].ToString();
+        }
+
+      
 
     }
 

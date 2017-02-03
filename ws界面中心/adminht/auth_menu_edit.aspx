@@ -55,7 +55,7 @@
 
                                         </div>
                                           <div class="form-group">
-                                            <label class="col-sm-3 control-label no-padding-right" for="ee_m_url">链接地址：</label>
+                                            <label class="col-sm-3 control-label no-padding-right" for="ee_m_url" id="id_m_url">链接地址：</label>
 
                                             <div class="col-sm-9">
                                                 <asp:TextBox ID="ee_m_url" runat="server" data-rel="tooltip" placeholder="填写节点链接url…" title="新节点链接url" CssClass="col-xs-12 col-sm-9 "></asp:TextBox>
@@ -231,7 +231,12 @@
  
     <script type="text/javascript">
 
- 
+        //获取url中的参数
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return r[2]; return ""; //返回参数值
+        }
 
         jQuery(function ($) {
  
@@ -239,8 +244,11 @@
                 $("#xiugaiquyu").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根节点无法修改节点数据，请先选择节点。");
             }
            
-            
 
+            $(document).on('dblclick', "#id_m_url", function () {
+                $("#sp_pagecontent_ee_m_url").val("/adminht/corepage/nono.aspx?ssstt=" + getUrlParam("sortid"));
+            });
+            
 
         });
 
