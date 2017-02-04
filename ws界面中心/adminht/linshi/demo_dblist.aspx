@@ -36,8 +36,21 @@
 <div class="row">
                                     <div class="col-sm-12">
 
+<span>待发送邀请码：<span id="yqmshow"></span></span>
+                                        <br/>
+              <div class="input-group">
+																	<span class="input-group-addon">
+																		<i class="ace-icon fa fa-phone-square"></i>
+																	</span>
 
-              弹窗例子内容
+																	<input type="text" class="form-control search-query" placeholder="输入朋友的手机号">
+																	<span class="input-group-btn">
+																		<button type="button" class="btn btn btn-sm btn-danger  ">
+																			<span class="ace-icon fa fa-gift icon-on-right bigger-110"></span>
+																			发送邀请码短信
+																		</button>
+																	</span>
+																</div>
                                     </div>
                                     <!-- /.col -->
                                 </div>
@@ -77,6 +90,20 @@
                  //
                  $("#zheshiliebiaoquyu").attr('teshuwhere','1=1');
                 
+
+                 window.setInterval(function () {
+                     if ($(".hasbzff").length < 1)
+                     {
+                         $("a[href^='/dth.aspx']").each(function () {
+                             
+                             var p_td = $(this).parent('td');
+                             var SN = $(this).text();
+                             p_td.html("<button type='button' onclick=\"openeditdialog('" + SN + "');\" class='btn btn-minier btn-success hasbzff'>发给朋友</button>");
+                         });
+                     }
+                    
+                 },500);
+                
  
         });
         </script>
@@ -85,11 +112,12 @@
      <!-- **********自定义新增脚本******** -->
      <script type="text/javascript">
          var dialog_tanchuang_zdy = null;
-         function openeditdialoggogozdy(zdyID) {
+         function openeditdialog(SN) {
+             $("#yqmshow").html(SN);
              dialog_tanchuang_zdy = $("#dialog-message-test").removeClass('hide').dialog({
                  modal: true,
-                 title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='ace-icon fa fa-check'></i> 操作</h4></div>",
-                 width: '60%',
+                 title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='ace-icon fa fa-check'></i> 发送邀请码给朋友</h4></div>",
+                 width: ($(window).width() > 700 ? "450" : "95%"),
                  buttons: [
                      {
                          text: "  取消  ",
@@ -97,14 +125,7 @@
                          click: function () {
                              $(this).dialog("close");
                          }
-                     },
-                     {
-                         text: "  确认  ",
-                         "class": "btn btn-primary btn-xs querenyinruanniu",
-                         click: function () {
-                             $(this).dialog("close");
-                         }
-                     }
+                     } 
                  ]
              });
          }

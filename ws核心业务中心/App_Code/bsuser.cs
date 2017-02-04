@@ -184,6 +184,49 @@ public class bsuser : System.Web.Services.WebService
 
 
 
+
+    /// <summary>
+    /// 根据UAid获取用户某个信息
+    /// </summary>
+    /// <param name="UAid">UAid</param>
+    /// <param name="colname">列名</param>
+    /// <returns></returns>
+    [WebMethod(MessageName = "获取账号某个信息", Description = "获取账号某个信息")]
+    public string get_user_info_onecol(string UAid, string colname)
+    {
+
+        I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
+        Hashtable return_ht = new Hashtable();
+        Hashtable param = new Hashtable();
+        param.Add("@UAid", UAid.Trim());
+
+        return_ht = I_DBL.RunParam_SQL("select top 1 "+ colname + " from view_ZZZ_userinfo_ex where UAid = @UAid ", "数据记录", param);
+
+        if ((bool)(return_ht["return_float"]))
+        {
+            DataTable redb = ((DataSet)return_ht["return_ds"]).Tables["数据记录"].Copy();
+
+            if (redb.Rows.Count < 1)
+            {
+                return "";
+            }
+            else
+            {
+                return redb.Rows[0][colname].ToString();
+
+            }
+
+        }
+        else
+        {
+            return "";
+        }
+
+
+    }
+
+
+
     /// <summary>
     /// 提交注册资料
     /// </summary>

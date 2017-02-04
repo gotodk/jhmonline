@@ -14,8 +14,13 @@ using Top.Api;
 using Top.Api.Request;
 using Top.Api.Response;
 
+ 
 public partial class adminht_corepage_dangan_ddzx_zhuce : System.Web.UI.Page
 {
+    public string serverurl = "http://gw.api.taobao.com/router/rest";
+    public string appkey = "23618633";
+    public string appsecret = "59833b957efba563d7221316c6921ec8";
+
     protected void Page_Load(object sender, EventArgs e)
     {
         string jkname = Request["jkname"].ToString();
@@ -54,7 +59,7 @@ public partial class adminht_corepage_dangan_ddzx_zhuce : System.Web.UI.Page
                 yzm= yzm.Substring(95, 4);
               
                 //临时的阿里大于接口
-                ITopClient client = new DefaultTopClient("http://gw.api.taobao.com/router/rest", "23618633", "59833b957efba563d7221316c6921ec8");
+                ITopClient client = new DefaultTopClient(serverurl, appkey, appsecret);
                 AlibabaAliqinFcSmsNumSendRequest req = new AlibabaAliqinFcSmsNumSendRequest();
                 req.Extend = "xxx";
                 req.SmsType = "normal";
@@ -72,6 +77,51 @@ public partial class adminht_corepage_dangan_ddzx_zhuce : System.Web.UI.Page
                 Response.Write("号码格式不正确");
             }
           
+        }
+
+
+        if (jkname == "fs_yqm")
+        {
+            //Thread.Sleep(2000);
+            //Response.Write("号码格式不正确");
+            //return ;
+            //根据手机号计算验证码，并调用接口发送
+            string yqm = Request["yqm"].ToString().Trim();
+            string fsr = Request["fsr"].ToString().Trim();
+            //根据Uaid获取姓名
+            string fsr_name = "某位盟友";
+            object[] re_dsi = IPC.Call("获取账号某个信息", new object[] { fsr, "xingming" });
+            if (re_dsi[0].ToString() == "ok")
+            {
+                //这个就是得到远程方法真正的返回值，不同类型的，自行进行强制转换即可。
+                fsr_name = re_dsi[1].ToString();
+            }
+            
+
+            string sjh = Request["sjh"].ToString().Trim();
+            Regex reg1 = new Regex(@"^[0-9]\d*$");
+            if (sjh.Length == 11 && reg1.IsMatch(sjh))
+            {
+                
+                //临时的阿里大于接口
+                ITopClient client = new DefaultTopClient(serverurl, appkey, appsecret);
+                AlibabaAliqinFcSmsNumSendRequest req = new AlibabaAliqinFcSmsNumSendRequest();
+                req.Extend = "xxx";
+                req.SmsType = "normal";
+                req.SmsFreeSignName = "镜海盟";
+                req.SmsParam = "{\"fsr\":\"" + fsr_name + "\",\"yqm\":\"" + yqm + "\"}";
+                req.RecNum = "" + sjh;
+                req.SmsTemplateCode = "SMS_44300348";
+                AlibabaAliqinFcSmsNumSendResponse rsp = client.Execute(req);
+
+                //返回错误,没有返回值代表没有错误
+                Response.Write(rsp.ErrMsg);
+            }
+            else
+            {
+                Response.Write("号码格式不正确");
+            }
+
         }
 
     }
