@@ -603,6 +603,7 @@
 		        }
 
 		        //收缩时重新定义列表高度
+		        var ss = getPageSize();
 		        var new_height = ss.WinH - $("#zheshiliebiaoquyu").offset().top - 150;
 		        if (new_height < 300) {
 		            new_height = 410;
