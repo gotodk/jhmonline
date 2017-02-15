@@ -11,6 +11,7 @@
  
 		<script src="/assets/js/jquery.easypiechart.js"></script>
 		<script src="/assets/js/flot/jquery.flot.js"></script>
+        <script src="/assets/js/flot/jquery.flot.categories.js"></script>
 		<script src="/assets/js/flot/jquery.flot.pie.js"></script>
 		<script src="/assets/js/flot/jquery.flot.resize.js"></script>
 
