@@ -442,13 +442,14 @@
 		        return re;
 
 		    }
+ 
             //初始化图表，就只能跑一次
 		    function init_chart_gogo(griddb)
 		    {
 		        //判定是否存在二次处理的图表数据
 		        var data = [];
 		        var data_sales = [];
-		        if (griddb.find("chartYHB>NewDataSet>饼图数据").text() == "" && griddb.find("chartYHB>NewDataSet>曲线图数据").text() == "") {
+		        if (griddb.find("chartYHB>NewDataSet>饼图数据").text() == "" && griddb.find("chartYHB>NewDataSet>曲线图数据").text() == "" && griddb.find("chartYHB>NewDataSet>柱状图数据").text() == "") {
 		            return false;
 		        }
 		        else {
@@ -472,6 +473,19 @@
 		                    });
 		                    data_sales.push(sales_data($(ele).find("项目名").text(), ddd, $(ele).find("颜色").text()));
 		                    
+		                });
+		            }
+		            if (griddb.find("chartYHB>NewDataSet>柱状图数据").text() != "") {
+		              
+		                griddb.find("chartYHB>NewDataSet>柱状图数据").each(function (index, ele) {
+
+		                    var ddd = [];
+
+		                    griddb.find("chartYHB>NewDataSet>柱状图数据-" + $(ele).find("项目名").text()).each(function (index_sub, ele_sub) {
+		                        ddd.push([$(ele_sub).find("X轴").text(), $(ele_sub).find("Y轴").text()]);
+		                    });
+		                    data_sales.push(sales_data($(ele).find("项目名").text(), ddd, $(ele).find("颜色").text()));
+
 		                });
 		            }
 		        }
@@ -556,15 +570,21 @@
 
 		        }
 
-		        if (griddb.find("chartYHB>NewDataSet>曲线图数据").text() != "") {
-
+		        if (griddb.find("chartYHB>NewDataSet>曲线图数据").text() != "" || griddb.find("chartYHB>NewDataSet>柱状图数据").text() != "") {
+		            var q_db_text = griddb.find("chartYHB>NewDataSet>曲线图数据").text();
+		            var z_db_text = griddb.find("chartYHB>NewDataSet>柱状图数据").text();
 		            var sales_charts = $('#sales-charts').css({ 'width': '100%', 'height': '220px' });
 		            $.plot("#sales-charts", data_sales, {
 		                hoverable: true,
 		                shadowSize: 0,
 		                series: {
-		                    lines: { show: true },
-		                    points: { show: true }
+		                    lines: { show: q_db_text !="" ? true : false },
+		                    points: { show: true },
+		                    bars: {
+		                        align: "center",
+		                        barWidth: 0.8,
+		                        show: q_db_text != "" ? false : true
+		                    }
 		                },
 		                xaxis: {
 		                    //tickLength: 0,

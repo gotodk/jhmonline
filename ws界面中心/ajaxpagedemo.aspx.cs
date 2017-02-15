@@ -78,7 +78,7 @@ public partial class ajaxpagedemo : System.Web.UI.Page
     
             for (int t = 0; t < dsjieguo.Tables.Count; t++)
             {
-                if (dsjieguo.Tables[t].TableName.IndexOf("曲线图数据") >= 0)
+                if (dsjieguo.Tables[t].TableName.IndexOf("曲线图数据") >= 0 || dsjieguo.Tables[t].TableName.IndexOf("柱状图数据") >= 0)
                 {
                     System.IO.StringWriter writer_quxian = new System.IO.StringWriter();
                     dsjieguo.Tables[t].WriteXml(writer_quxian);
