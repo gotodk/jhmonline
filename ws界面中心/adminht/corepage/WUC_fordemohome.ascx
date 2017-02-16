@@ -12,6 +12,7 @@
                                 <div class="row">
 
                                     <div class="col-sm-12">
+                                       
 										<div class="widget-box transparent">
 											<div class="widget-header widget-header-flat">
 												<h4 class="widget-title lighter">
@@ -86,6 +87,9 @@
 												</div><!-- /.widget-main -->
 											</div><!-- /.widget-body -->
 										</div><!-- /.widget-box -->
+
+
+                                         <div class="center"><hr /><img src="/mytutu/jhmlogo.jpg" style=" border:0px;"/></div>
 									</div><!-- /.col -->
 								</div><!-- /.row -->
 

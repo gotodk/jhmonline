@@ -50,7 +50,7 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<i class="ace-icon fa fa-cubes green"></i>
+									
 									<span class="white" id="denglu_title" runat="server">系统名称</span>
 								</h1>
 						 
