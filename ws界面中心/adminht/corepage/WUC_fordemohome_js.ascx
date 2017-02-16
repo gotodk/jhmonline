@@ -22,7 +22,7 @@
 		<script type="text/javascript">
 		    jQuery(function ($) {
 
-		      
+		        $("#dalogocc").fadeIn(10000);
 
 			})
 		</script>

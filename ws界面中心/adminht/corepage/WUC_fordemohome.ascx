@@ -89,7 +89,7 @@
 										</div><!-- /.widget-box -->
 
 
-                                         <div class="center"><hr /><img src="/mytutu/jhmlogo.jpg" style=" border:0px;"/></div>
+                                         <div class="center"><hr /><img id="dalogocc" src="/mytutu/jhmlogo.jpg" style=" border:0px; display:none;"/></div>
 									</div><!-- /.col -->
 								</div><!-- /.row -->
 
