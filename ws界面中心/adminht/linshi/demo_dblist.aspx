@@ -131,5 +131,35 @@
          }
      </script>
 
+
+         <!-- **********图表点击事件******** -->
+     <script type="text/javascript">
+         jQuery(function ($) {
+             $("#sales-charts").bind("plotclick", function (event, pos, item) {
+               //  alert("You clicked at " + pos.x + ", " + pos.y);
+                 //item: {
+                 //        datapoint: the point, e.g. [0, 2]
+                 //        dataIndex: the index of the point in the data array
+                 //        series: the series object
+                 //        seriesIndex: the index of the series
+                 //    pageX, pageY: the global screen coordinates of the point
+                 //}
+                 if (item) {
+                     alert(item.series['label'] + "|" + item.datapoint[0].toString() + "|" + Object.keys(item.series.xaxis.categories)[item.datapoint[0]] + "|" + item.datapoint[1].toString());
+                 }
+             });
+             $("#piechart-placeholder").bind("plotclick", function (event, pos, item) {
+                 //alert("You clicked at " + pos.x + ", " + pos.y);
+                 // axis coordinates for other axes, if present, are in pos.x2, pos.x3, ...
+                 // if you need global screen coordinates, they are pos.pageX, pos.pageY
+
+                 if (item) {
+                     
+                     alert(item.series['label'] + "|" + item.datapoint[0].toString() + "|" + item.datapoint[1].toString());
+                 }
+             });
+         });
+     </script>
+
 </asp:Content>
 

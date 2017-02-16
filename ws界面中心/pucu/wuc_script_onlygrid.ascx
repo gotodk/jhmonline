@@ -589,7 +589,8 @@
 		                },
 		                xaxis: {
 		                    //tickLength: 0,
-		                    tickDecimals: 0
+		                    tickDecimals: 0,
+		                    mode: 'categories'
 		                },
 		                yaxis: {
 		                    //ticks: 10,
@@ -601,9 +602,10 @@
 		                    backgroundColor: { colors: ["#fff", "#fff"] },
 		                    borderWidth: 1,
 		                    borderColor: '#555',
-		                    hoverable: true
+		                    hoverable: true,
+		                    clickable: true
 		                },
-		                legend: { show: true, position: "ne" }
+		                legend: { show: true, position: "ne" } 
 		            });
 
 		            $("#sales-charts").bind("plothover", function (event, pos, item) {
@@ -620,6 +622,8 @@
 		                    previousPoint = null;
 		                }
 		            });
+
+
 
 		        }
 
