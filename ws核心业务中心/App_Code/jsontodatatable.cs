@@ -62,8 +62,9 @@ public static class jsontodatatable
     /// <param name="Xstr">传入影响x轴的列名，饼图时代表百分比列</param>
     /// <param name="Ystr">传入影响y轴的列名，饼图时代表颜色列。饼图时传入空，使用默认十个颜色</param>
     /// <param name="olddt_db">传入待解析的datatable</param>
+    /// <param name="group">分组开关，空值不自动汇总，yes，则自动汇总累加相同X轴数据的值</param>
     /// <returns></returns>
-    public static DataSet re_chart(string lx, string line, string line_name, string[] linecolor, string Xstr, string Ystr, DataTable olddt_db)
+    public static DataSet re_chart(string lx, string line, string line_name, string[] linecolor, string Xstr, string Ystr, DataTable olddt_db,string group)
     {
         try
         {
@@ -152,6 +153,20 @@ public static class jsontodatatable
                         dt_qz_sub.Columns[0].Caption = "X轴";
                         dt_qz_sub.Columns[1].ColumnName = "Y轴";
                         dt_qz_sub.Columns[1].Caption = "Y轴";
+
+                        if (group == null)
+                        {
+                            group = "";
+                        }
+                        if(group == "yes")
+                        {
+                            Common.DataSetHelper dsh = new Common.DataSetHelper();
+                            DataTable dt_group = dsh.SelectGroupByInto(lx + "-" + dtc2.Rows[i][0].ToString(), dt_qz_sub, "X轴 X轴,sum(Y轴) Y轴", "", "X轴");
+                            dt_qz_sub.Clear();
+                            dt_qz_sub = dt_group.Copy();
+                        }
+
+
                         dsre.Tables.Add(dt_qz_sub.Copy());
                     }
                     return dsre;
@@ -170,6 +185,6 @@ public static class jsontodatatable
         }
     }
 
+ 
 
-
-}
+    }

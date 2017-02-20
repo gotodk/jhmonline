@@ -465,11 +465,12 @@
 		                });
 		            }
 		            if (griddb.find("chartYHB>NewDataSet>曲线图数据").text() != "") {
+		               
 		                griddb.find("chartYHB>NewDataSet>曲线图数据").each(function (index, ele) {
 		                  
 		                    var ddd = [];
-		                   
-		                    griddb.find("chartYHB>NewDataSet>曲线图数据-" + $(ele).find("项目名").text()).each(function (index_sub, ele_sub) {
+		                    //_x0028_xx_x0029_
+		                    griddb.find("chartYHB>NewDataSet>曲线图数据-" + $(ele).find("项目名").text().replace(/\(/g, "_x0028_").replace(/\)/g, "_x0029_")).each(function (index_sub, ele_sub) {
 		                        ddd.push([$(ele_sub).find("X轴").text(), $(ele_sub).find("Y轴").text()]);
 		                    });
 		                    data_sales.push(sales_data($(ele).find("项目名").text(), ddd, $(ele).find("颜色").text()));
@@ -477,12 +478,11 @@
 		                });
 		            }
 		            if (griddb.find("chartYHB>NewDataSet>柱状图数据").text() != "") {
-		              
 		                griddb.find("chartYHB>NewDataSet>柱状图数据").each(function (index, ele) {
 
 		                    var ddd = [];
 
-		                    griddb.find("chartYHB>NewDataSet>柱状图数据-" + $(ele).find("项目名").text()).each(function (index_sub, ele_sub) {
+		                    griddb.find("chartYHB>NewDataSet>柱状图数据-" + $(ele).find("项目名").text().replace(/\(/g, "_x0028_").replace(/\)/g, "_x0029_")).each(function (index_sub, ele_sub) {
 		                        ddd.push([$(ele_sub).find("X轴").text(), $(ele_sub).find("Y轴").text()]);
 		                    });
 		                    data_sales.push(sales_data($(ele).find("项目名").text(), ddd, $(ele).find("颜色").text()));
