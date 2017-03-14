@@ -338,7 +338,7 @@
                 if (mmnumber > 3) {
                     mmnumber = 1;
                 }
-                $("#particles-js").fadeOut(1500, function () { $("#particles-js").fadeIn(1500); $("#particles-js").css("background-image", "url('images/banner" + mmnumber + ".jpg')"); });
+                $("#particles-js").fadeOut(0, function () { $("#particles-js").fadeIn(0); $("#particles-js").css("background-image", "url('images/banner" + mmnumber + ".jpg')"); });
 
 
             }
@@ -347,7 +347,7 @@
             new Image().src = 'images/banner3.jpg';
 
             qiehuan();
-            setInterval(qiehuan, 30000);
+            //setInterval(qiehuan, 30000);
 
 
 
