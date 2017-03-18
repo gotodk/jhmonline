@@ -111,6 +111,26 @@ public class NoReSet_160114000014
         param.Add("@youxiang", ht_forUI["youxiang"].ToString());
         param.Add("@lingdao", ht_forUI["lingdao"].ToString());
 
+
+
+        param.Add("@sfzh", ht_forUI["sfzh"].ToString());
+        param.Add("@csrq", ht_forUI["csrq"].ToString());
+        param.Add("@sheng", ht_forUI["yhb_city_Promary_shengshiqu"].ToString());
+        param.Add("@shi", ht_forUI["yhb_city_City_shengshiqu"].ToString());
+        param.Add("@qu", ht_forUI["yhb_city_Qu_shengshiqu"].ToString());
+        param.Add("@minzu", ht_forUI["minzu"].ToString());
+        param.Add("@yuanxiao", ht_forUI["yuanxiao"].ToString());
+        param.Add("@wxhm", ht_forUI["wxhm"].ToString());
+        param.Add("@qqhaoma", ht_forUI["qqhaoma"].ToString());
+        param.Add("@tongxundizhi", ht_forUI["tongxundizhi"].ToString());
+        param.Add("@ss_yqmsx", ht_forUI["ss_yqmsx"].ToString());
+        param.Add("@neibubeizhu", ht_forUI["neibubeizhu"].ToString());
+
+        //建档人和更新人 addtime,gxtime
+        param.Add("@addren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
+        //param.Add("@gxren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
+       
+
         param.Add("@ss_yaoqingma", yqm);
 
 
@@ -122,7 +142,7 @@ public class NoReSet_160114000014
 
         alsql.Add("INSERT INTO  auth_users_auths(UAid ,Uloginname,Uloginpassword,Uattrcode) VALUES(@UAid ,@Uloginname,@Uloginpassword,@Uattrcode )");
 
-        alsql.Add("INSERT INTO  ZZZ_userinfo(UAid ,xingming,zhuangtai,zhiwei,xingbie,beizhu,gongzuodi,suoshuquyu,shoujihao,gudingdianhua,youxiang,lingdao,ss_yaoqingma) VALUES(@UAid ,@xingming,@zhuangtai,@zhiwei,@xingbie,@beizhu,@gongzuodi,@suoshuquyu,@shoujihao,@gudingdianhua,@youxiang,@lingdao,@ss_yaoqingma)");
+        alsql.Add("INSERT INTO  ZZZ_userinfo(UAid ,xingming,zhuangtai,zhiwei,xingbie,beizhu,gongzuodi,suoshuquyu,shoujihao,gudingdianhua,youxiang,lingdao,ss_yaoqingma,sfzh,csrq,sheng,shi,qu,minzu,yuanxiao,wxhm,qqhaoma,tongxundizhi,ss_yqmsx,neibubeizhu,addren,addtime) VALUES(@UAid ,@xingming,@zhuangtai,@zhiwei,@xingbie,@beizhu,@gongzuodi,@suoshuquyu,@shoujihao,@gudingdianhua,@youxiang,@lingdao,@ss_yaoqingma,@sfzh,@csrq,@sheng,@shi,@qu,@minzu,@yuanxiao,@wxhm,@qqhaoma,@tongxundizhi,@ss_yqmsx,@neibubeizhu,@addren,getdate())");
 
         if (yqm != "")
         {
@@ -214,12 +234,33 @@ public class NoReSet_160114000014
         param.Add("@youxiang", ht_forUI["youxiang"].ToString());
         param.Add("@lingdao", ht_forUI["lingdao"].ToString());
 
+
+
+        param.Add("@sfzh", ht_forUI["sfzh"].ToString());
+        param.Add("@csrq", ht_forUI["csrq"].ToString());
+        param.Add("@sheng", ht_forUI["yhb_city_Promary_shengshiqu"].ToString());
+        param.Add("@shi", ht_forUI["yhb_city_City_shengshiqu"].ToString());
+        param.Add("@qu", ht_forUI["yhb_city_Qu_shengshiqu"].ToString());
+        param.Add("@minzu", ht_forUI["minzu"].ToString());
+        param.Add("@yuanxiao", ht_forUI["yuanxiao"].ToString());
+        param.Add("@wxhm", ht_forUI["wxhm"].ToString());
+        param.Add("@qqhaoma", ht_forUI["qqhaoma"].ToString());
+        param.Add("@tongxundizhi", ht_forUI["tongxundizhi"].ToString());
+        param.Add("@ss_yqmsx", ht_forUI["ss_yqmsx"].ToString());
+        param.Add("@neibubeizhu", ht_forUI["neibubeizhu"].ToString());
+
+        //建档人和更新人 addtime,gxtime
+        //param.Add("@addren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
+        param.Add("@gxren", ht_forUI["yhbsp_session_uer_UAid"].ToString());
+
+
+
         if (ht_forUI["zhuangtai"].ToString() == "离职")
         { param.Add("@Uattrcode", "1"); }
         else
         { param.Add("@Uattrcode", "-1"); }
 
-        alsql.Add("UPDATE ZZZ_userinfo SET xingming=@xingming,zhuangtai=@zhuangtai,zhiwei=@zhiwei,xingbie=@xingbie,beizhu=@beizhu,gongzuodi=@gongzuodi,suoshuquyu=@suoshuquyu,shoujihao=@shoujihao,gudingdianhua=@gudingdianhua,youxiang=@youxiang,lingdao=@lingdao where UAid=@UAid ");
+        alsql.Add("UPDATE ZZZ_userinfo SET xingming=@xingming,zhuangtai=@zhuangtai,zhiwei=@zhiwei,xingbie=@xingbie,beizhu=@beizhu,gongzuodi=@gongzuodi,suoshuquyu=@suoshuquyu,shoujihao=@shoujihao,gudingdianhua=@gudingdianhua,youxiang=@youxiang,lingdao=@lingdao, sfzh=@sfzh,csrq=@csrq,sheng=@sheng,shi=@shi,qu=@qu,minzu=@minzu,yuanxiao=@yuanxiao,wxhm=@wxhm,qqhaoma=@qqhaoma,tongxundizhi=@tongxundizhi,ss_yqmsx=@ss_yqmsx,neibubeizhu=@neibubeizhu,gxren=@gxren,gxtime=getdate() where UAid=@UAid ");
         alsql.Add("UPDATE auth_users_auths SET Uloginname=@Uloginname,Uloginpassword=@Uloginpassword,Uattrcode=@Uattrcode  where UAid=@UAid ");
 
         return_ht = I_DBL.RunParam_SQL(alsql, param);
