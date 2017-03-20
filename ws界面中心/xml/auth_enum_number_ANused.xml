@@ -112,6 +112,16 @@
     <ANused>1</ANused>
   </Unumber1>
   <Unumber1>
+    <ANID>E-A4A600B1E8F1-EDDA6259-44BB-4B29-B79D</ANID>
+    <ANClass>Unumber1</ANClass>
+    <ANClassName>后台菜单权限</ANClassName>
+    <ANBaseName>内部办公-全部预选登记</ANBaseName>
+    <ANBaseNumber>8</ANBaseNumber>
+    <ANBaseNumber_p>3</ANBaseNumber_p>
+    <ANextendID>217</ANextendID>
+    <ANused>1</ANused>
+  </Unumber1>
+  <Unumber1>
     <ANID>E-A4A600B1E8EB-BCE26264-DF43-401F-AAE9</ANID>
     <ANClass>Unumber1</ANClass>
     <ANClassName>后台菜单权限</ANClassName>
