@@ -377,49 +377,7 @@
 		</script>
 
 
-          <%--  微信企业号访问内访问时，尝试获取当前微信号对应的账号，如果账号存在，提取这个账号的密码，自动写入界面并自动提交登录请求--%>
-		<script type="text/javascript">
-		    function isWeiXin() {
-		        var ua = window.navigator.userAgent.toLowerCase();
-		        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-		            return true;
-		        } else {
-		            return false;
-		        }
-		    }
-		    //var wx_username_fra = $(window.frames["wxcheckzdy"].document);
-		    jQuery(function ($) {
-		        var aulcscs = getUrlParam("aulcscs");
-		        aulcscs = decodeURI(aulcscs);
-			    if (isWeiXin() && getUrlParam("aulgogo") != "1")
-			    {
-			        var appid = "<%=sCorpID%>";
-			        var wx_checkurl = "<%=wx_checkurl%>";
-			        var wx_url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appid + "&redirect_uri=" + wx_checkurl + "&response_type=code&scope=SCOPE#wechat_redirect";
-			        //不能直接ajax访问，有跨域问题。 要跳转。
-			        top.location.href = wx_url;
-		
-			    }
-
-			    //如果有自动登录参数，则自动登录
-			
-			    if (getUrlParam("aulgogo") == "1" && aulcscs.indexOf("|") > 0)
-			    {
-			        var aulcscs_arr = new Array(); //定义一数组 
-			        aulcscs_arr = aulcscs.split("|"); //字符分割 
-			    
-			        $("#zhanghao").val(aulcscs_arr[0]);
-			        $("#mima").val(uncMe(aulcscs_arr[1], "mima"));
-			        //alert(uncMe(aulcscs_arr[1], "mima"));
-			        gogoajax1(formid1, buttonid1, url1, jkname_save1);
-			    }
-			  
-			     
-			   
-			});
-
-			
-		</script>
+ 
 
 
 

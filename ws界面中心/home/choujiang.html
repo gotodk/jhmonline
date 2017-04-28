@@ -1,0 +1,310 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>镜海盟-抽奖号码登记</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="/home/assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/home/assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="/home/assets/css/ie8.css" /><![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/home/assets/css/sweetalert.css">
+
+    <link rel="stylesheet" href="/assets/css/dropzone.css" />
+
+</head>
+	<body >
+		<div id="page-wrapper">
+
+			<!-- Header -->
+            <header id="header">
+                <h1><a href="/home/index.html">镜海盟</a> 欢迎你</h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/home/index.html">首页</a></li>
+                        <li>
+                            <a href="#" class="icon fa-angle-down">导航</a>
+                            <ul id="opcaidan">
+                                
+                            </ul>
+                        </li>
+                        <li><a href="/adminht/demo_home.aspx" class="button" id="denglulianjie1">登录</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+			<!-- Main -->
+				<section id="main" class="container 75%">
+				 
+                    <section class="box">
+                        <form id="formzhuce">
+                            <h3>抽奖号码登记</h3>
+                            <div class="row uniform 50%">
+                                <div class="12u 12u(mobilep)">
+                                    <h4>*真实姓名：</h4>
+                                </div>
+                            </div>
+                            <div class="row uniform 50%">
+                                <div class="12u 12u(mobilep)">
+                                    <input type="text" name="xingming" id="xingming" value="" maxlength="20">
+                                </div>
+
+                            </div>
+
+                            <div class="row uniform 50%">
+                                <div class="2u 6u(narrower)">
+                                    <input type="radio" id="pp_nan" name="ppxingbie" value="男">
+                                    <label for="pp_nan">男</label>
+                                </div>
+                                <div class="2u 6u(narrower)">
+                                    <input type="radio" id="pp_nv" name="ppxingbie" value="女">
+                                    <label for="pp_nv">女</label>
+                                </div>
+
+                            </div>
+
+ 
+                            <div class="row uniform 50%">
+                                <div class="12u 12u(mobilep)">
+                                    <h4>*手机号码：</h4>
+                                </div>
+                            </div>
+                            <div class="row uniform 50%">
+                                <div class="12u 12u(mobilep)">
+                                    <input type="text" name="dianhua" id="dianhua" value="" maxlength="20">
+                                </div>
+
+                            </div>
+
+
+                            <div class="row uniform 50%">
+                                <div class="12u 12u(mobilep)">
+                                    <h4>上传照片：</h4>
+                                </div>
+                            </div>
+                            <div class="row uniform 50%">
+                                <div class="12u 12u(mobilep)">
+                                   
+
+                                    <div class="col-sm-10">
+                                        <div class="dropzone col-xs-12 col-sm-12 " id="dropzone">
+                                            <span class="icon   fa-cloud "></span>点击开始选择照片或拍照<hr/>
+                                            <div class="fallback">
+                                                <input type="file" />
+                                            </div>
+
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12" id="dropzone_only_for_showinfo">
+
+                                        </div>
+                                    </div>
+
+                                    <input class="hide" style="display:none;" id="Stupian_old" name="Stupian_old" />
+                                    <div class="ValidErrInfo col-sm-12 no-padding-left"></div>
+
+
+
+                                </div>
+
+                            </div>
+                   
+ 
+
+
+                            <div class="row uniform">
+                                <div class="12u">
+                                    <ul class="actions">
+                                        <li id="zhucego_li"><input type="button" value="登记资料，等待抽奖！" id="zhucego"></li>
+                             
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+				</section>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <!--<ul class="icons">
+            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+            <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+        </ul>-->
+                <ul class="copyright">
+                  
+                </ul>
+            </footer>
+
+		</div>
+
+        <!-- Scripts -->
+        <script src="/home/assets/js/jquery.min.js"></script>
+  
+        <script src="/home/assets/js/jquery.dropotron.min.js"></script>
+        <script src="/home/assets/js/jquery.scrollgress.min.js"></script>
+        <script src="/home/assets/js/skel.min.js"></script>
+        <script src="/home/assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="/home/assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="/home/assets/js/main.js"></script>
+
+        <script src="/home/assets/js/sweetalert.min.js"></script>
+
+
+        <script src="/assets/js/dropzone.js"></script>
+
+
+        <script type="text/javascript">
+
+            //获取url中的参数
+            function getUrlParam(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+                var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+                if (r != null) return r[2]; return ""; //返回参数值
+            }
+
+        
+
+
+            $(document).ready(function () {
+
+
+
+                if ($(".dropzone").length > 0) {
+                    //上传控件Dropzone
+                    try {
+                        Dropzone.autoDiscover = false;
+                        myDropzone = new Dropzone("#dropzone", {
+                            paramName: "file1", // The name that will be used to transfer the file
+                            maxFilesize: 500, // MB
+                            maxFiles: 20,
+                            url: '/ajaxdropzoneupload.aspx',
+                            addRemoveLinks: true,
+                            createImageThumbnails: true,
+                            //acceptedFiles: "image/*,.jpg,.bmp,.jpeg,.gif,.png,*,.rar,.zip,.txt,.docx,.doc,.xls,.xlsx,.pdf,.vsdx,.vsd,.mp4,image/png,image/gif,image/jpg,image/jpeg,image/bmp",
+                            //acceptedFiles: "image/*,.jpg,.bmp,.jpeg,.gif,.png,*,.rar,.zip,.txt,.docx,.doc,.xls,.xlsx,.pdf,.vsdx,.vsd,.mp4,image/png,image/gif,image/jpg,image/jpeg,image/bmp",
+                            //maxThumbnailFilesize: 10,
+                            //thumbnailWidth: 1024,
+                            //thumbnailHeight: 1024,
+                            //accept: function (file, done) {
+                            //    //alert(file.url);
+                            //    return done(file);
+                            //},
+                            dictDefaultMessage:
+                            '点击或拖拽文件上传'
+                      ,
+                            dictResponseError: 'Error while uploading file!',
+
+                            //change the previewTemplate to use Bootstrap progress bars
+                            previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"progress progress-small progress-striped active\"><div class=\"progress-bar progress-bar-success\" data-dz-uploadprogress></div></div>\n  <div class=\"dz-success-mark\"><span></span></div>\n  <div class=\"dz-error-mark\"><span></span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>",
+                            init: function () {
+                                this.on("success", function (file, servermsg) {
+                                    //把服务器返回的数据放入自定义表单
+                                    var hide_server_path = document.createElement("input");
+                                    hide_server_path.name = "allpath_" + this.options.paramName;
+                                    hide_server_path.type = "checkbox";
+                                    hide_server_path.value = servermsg;
+                                    hide_server_path.checked = "checked";
+                                    $(hide_server_path).hide();
+                                    file.previewTemplate.appendChild(hide_server_path);
+
+
+                                    var houzhui = servermsg.substring(servermsg.lastIndexOf("."), servermsg.lastIndexOf(".").length);//后缀名 
+
+                                    if (houzhui != ".jpg" && houzhui != ".bmp" && houzhui != ".gif" && houzhui != ".png" && houzhui != ".jpeg") {
+                                        //$(file.previewTemplate).find("img").remove();
+                                        file.previewElement.classList.remove("dz-image-preview");
+                                        file.previewElement.classList.add("dz-file-preview");
+                                    }
+                                    else {
+                                        $(file.previewTemplate).find("img").attr('src', servermsg);
+                                    }
+
+
+
+                                    //调试用，显示服务返回的数据
+                                    //file.previewTemplate.appendChild(document.createTextNode(servermsg));
+                                });
+
+                            }
+                            , sending: function (xhr, formData) {
+                                if (!(window.File || window.FileReader || window.FileList || window.Blob)) {
+                                    alert('不支持的操作');
+                                }
+
+                                //alert(readFile(document.querySelector("input[type=file]")));
+
+                            }
+                        });
+
+                    } catch (e) {
+                        alert(e);
+                    }
+                }
+
+
+
+
+
+
+
+   
+
+                //处理提交按钮
+            function zhuce_callback(msg) {
+
+                $("#zhucego_li").html("<input type=\"button\" value=\"登记资料，等待抽奖！\" id=\"zhucego\">");
+
+                if (msg.indexOf("ok|") == 0) {
+           
+                    swal({ title: "登记成功", text: msg.replace("ok|", ""), type: "success", showCancelButton: false, closeOnConfirm: false, showLoaderOnConfirm: false, confirmButtonText: "知道了", confirmButtonColor: "#DD6B55", cancelButtonText: "取消" });
+                }
+                else {
+                    //根据返回值判断焦点
+                    var reerr = new Array(); //定义一数组 
+                    reerr = msg.split("|"); //字符分割 
+
+                    if ($("#" + reerr[1]).length > 0)
+                    {
+                        $("#" + reerr[1])[0].focus();
+                        $(document).scrollTop($("#" + reerr[1]).offset().top - 400);
+                    }
+                    
+                    
+                    swal({ title: "登记失败，原因如下", text: reerr[2], type: "error", showCancelButton: false, closeOnConfirm: true, showLoaderOnConfirm: false, confirmButtonText: "调整资料", confirmButtonColor: "#DD6B55", cancelButtonText: "取消" }, function () { });
+                    
+                }
+              
+            };
+
+
+
+            $(document).on('click', "#zhucego", function () {
+                $("#zhucego_li").html("正在处理中，请稍后……");
+                $.ajax({
+                    type: "GET",
+                    url: "/adminht/corepage/dangan/ddzx_zhuce.aspx",
+                    dataType: "html",
+                    data: "ajaxrun=zhuce&jkname=zhuce&choujiang=yes&" + $("#formzhuce").serialize(),
+                    success: zhuce_callback,
+                    error: function () {
+                        $("#zhucego_li").html("<input type=\"button\" value=\"登记资料，等待抽奖！\" id=\"zhucego\">"); alert("发生意外错误！");
+                }
+                });
+            });
+
+
+ 
+
+
+        });
+        </script>
+
+
+	</body>
+</html>

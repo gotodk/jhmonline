@@ -88,7 +88,7 @@ public class bsuser : System.Web.Services.WebService
     /// <param name="username_wx">数据库类型识别号</param>
     /// <returns></returns>
     [WebMethod(MessageName = "EAS登录模拟", Description = "EAS登录模拟")]
-    public string EASLogin_test(string user,string pass,string sys,string zhangtao,string lan,int sys2)
+    public string EASLogin_test(string user, string pass, string sys, string zhangtao, string lan, int sys2)
     {
         return "{\"status\" :  0,\"msg\" : \"信息\",\"billErrors\":[{\"id\":\"\",\"number\":\"\", errorMsgs:[\"\",\"\"]}    ]}";
     }
@@ -102,7 +102,7 @@ public class bsuser : System.Web.Services.WebService
     [WebMethod(MessageName = "邀请码检查", Description = "邀请码检查")]
     public string checkyqm(string yqm)
     {
-      
+
         I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
         Hashtable return_ht = new Hashtable();
         Hashtable param = new Hashtable();
@@ -127,9 +127,9 @@ public class bsuser : System.Web.Services.WebService
                 }
                 else
                 {
-                    return "ok|邀请码有效，此验证码是来自“"+ dr["userid_name"].ToString() + "”的邀请！";
+                    return "ok|邀请码有效，此验证码是来自“" + dr["userid_name"].ToString() + "”的邀请！";
                 }
-               
+
             }
 
         }
@@ -138,7 +138,7 @@ public class bsuser : System.Web.Services.WebService
             return "err|错误err，系统异常！";
         }
 
-         
+
     }
 
 
@@ -149,7 +149,7 @@ public class bsuser : System.Web.Services.WebService
     /// <param name="lx">字段名称</param>
     /// <returns></returns>
     [WebMethod(MessageName = "账号信息重复检查", Description = "账号信息重复检查")]
-    public string check_pp_zh(string ddstr,string lx)
+    public string check_pp_zh(string ddstr, string lx)
     {
 
         I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
@@ -157,7 +157,49 @@ public class bsuser : System.Web.Services.WebService
         Hashtable param = new Hashtable();
         param.Add("@ddstr", ddstr.Trim());
 
-        return_ht = I_DBL.RunParam_SQL("select top 1 UAid from view_ZZZ_userinfo_ex where "+ lx + "=@ddstr ", "数据记录", param);
+        return_ht = I_DBL.RunParam_SQL("select top 1 UAid from view_ZZZ_userinfo_ex where " + lx + "=@ddstr ", "数据记录", param);
+
+        if ((bool)(return_ht["return_float"]))
+        {
+            DataTable redb = ((DataSet)return_ht["return_ds"]).Tables["数据记录"].Copy();
+
+            if (redb.Rows.Count < 1)
+            {
+                return "ok";
+            }
+            else
+            {
+                return "err|有重复";
+
+            }
+
+        }
+        else
+        {
+            return "err|检查出错";
+        }
+
+
+    }
+
+
+
+    /// <summary>
+    /// 账号信息重复检查(抽奖) 
+    /// </summary>
+    /// <param name="ddstr">待检查的字符串</param>
+    /// <param name="lx">字段名称</param>
+    /// <returns></returns>
+    [WebMethod(MessageName = "账号信息重复检查(抽奖)", Description = "账号信息重复检查(抽奖)")]
+    public string check_pp_zh2(string ddstr, string lx)
+    {
+
+        I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
+        Hashtable return_ht = new Hashtable();
+        Hashtable param = new Hashtable();
+        param.Add("@ddstr", ddstr.Trim());
+
+        return_ht = I_DBL.RunParam_SQL("select top 1 id from HH_cjuser where " + lx + "=@ddstr ", "数据记录", param);
 
         if ((bool)(return_ht["return_float"]))
         {
@@ -200,7 +242,7 @@ public class bsuser : System.Web.Services.WebService
         Hashtable param = new Hashtable();
         param.Add("@UAid", UAid.Trim());
 
-        return_ht = I_DBL.RunParam_SQL("select top 1 "+ colname + " from view_ZZZ_userinfo_ex where UAid = @UAid ", "数据记录", param);
+        return_ht = I_DBL.RunParam_SQL("select top 1 " + colname + " from view_ZZZ_userinfo_ex where UAid = @UAid ", "数据记录", param);
 
         if ((bool)(return_ht["return_float"]))
         {
@@ -225,7 +267,41 @@ public class bsuser : System.Web.Services.WebService
 
     }
 
+    /// <summary>
+    /// 获取抽奖资料
+    /// </summary>
+    /// <param name="sp">参数</param>
+    /// <returns></returns>
+    [WebMethod(MessageName = "获取抽奖资料", Description = "获取抽奖资料")]
+    public DataTable huoquchoujiangdb(string sp)
+    {
+        I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
+        Hashtable return_ht = new Hashtable();
+        Hashtable param = new Hashtable();
+     
 
+        return_ht = I_DBL.RunParam_SQL("select * from HH_cjuser where beuse = 1 ", "主要数据", param);
+
+        if ((bool)(return_ht["return_float"]))
+        {
+            DataTable redb = ((DataSet)return_ht["return_ds"]).Tables["主要数据"].Copy();
+
+            if (redb.Rows.Count > 0)
+            {
+                return redb;
+            }
+            else
+            {
+                return null;
+
+            }
+
+        }
+        else
+        {
+            return null;
+        }
+    }
 
     /// <summary>
     /// 提交注册资料
@@ -235,6 +311,7 @@ public class bsuser : System.Web.Services.WebService
     [WebMethod(MessageName = "提交注册资料", Description = "提交注册资料")]
     public string tijiaozhuceziliao(DataTable parameter_forUI)
     {
+
         //接收转换参数
         Hashtable ht_forUI = new Hashtable();
         for (int i = 0; i < parameter_forUI.Rows.Count; i++)
@@ -242,16 +319,100 @@ public class bsuser : System.Web.Services.WebService
             ht_forUI[parameter_forUI.Rows[i]["参数名"].ToString()] = parameter_forUI.Rows[i]["参数值"].ToString();
         }
 
+        //获取抽奖数据
+        if (ht_forUI.Contains("choubegin") && ht_forUI["choubegin"].ToString().Trim() == "yes")
+        {
+
+        }
+
+        //提交抽奖名单资料
+        if (ht_forUI.Contains("choujiang") && ht_forUI["choujiang"].ToString().Trim() == "yes")
+        {
+
+            if (ht_forUI["xingming"].ToString().Trim() == "")
+            {
+                return "err|xingming|没有填写“真实姓名”！";
+            }
+
+
+            string dianhua = ht_forUI["dianhua"].ToString().Trim();
+            Regex reg222 = new Regex(@"^[0-9]\d*$");
+            if (dianhua.Length != 11 || !reg222.IsMatch(dianhua))
+            {
+                return "err|dianhua|“手机号码”格式不正确,应为11位数字！";
+            }
+            string jc_sj = check_pp_zh2(ht_forUI["dianhua"].ToString().Trim(), "dianhua");
+            if (jc_sj != "ok")
+            {
+                return "err|dianhua|“手机号码”已被使用，请更换！";
+            }
+
+
+            if (!ht_forUI.Contains("ppxingbie") || (ht_forUI["ppxingbie"].ToString().Trim() != "男" && ht_forUI["ppxingbie"].ToString().Trim() != "女"))
+            {
+                return "err|ppxingbie|没有选择“性别”！";
+            }
+
+
+            if (ht_forUI.Contains("allpath_file1"))
+            {
+                if (ht_forUI["allpath_file1"].ToString().IndexOf(',') > 0)
+                {
+                    return "err|zhaopian|只允许上传一张照片！";
+                }
+
+            }
+            else
+            {
+                ht_forUI["allpath_file1"] = "/cj/images/demo4.jpg";
+            }
+           
+
+
+            if (1 == 1)
+            {
+                //开始真正的处理，根据业务逻辑操作数据库
+                I_Dblink I_DBL2 = (new DBFactory()).DbLinkSqlMain("");
+                Hashtable return_ht2 = new Hashtable();
+                ArrayList alsql2 = new ArrayList();
+                Hashtable param2 = new Hashtable();
+                //以可排序guid方式生成
+                string guid2 = CombGuid.GetNewCombGuid("U");
+                param2.Add("@id", guid2);
+                param2.Add("@xingming", ht_forUI["xingming"].ToString().Trim());
+                param2.Add("@xingbie", ht_forUI["ppxingbie"].ToString());
+                param2.Add("@dianhua", ht_forUI["dianhua"].ToString());
+                param2.Add("@zhaopian", ht_forUI["allpath_file1"].ToString().Trim());
+
+                alsql2.Add("INSERT INTO  HH_cjuser(id ,xingming,xingbie,dianhua,zhaopian) VALUES(@id ,@xingming,@xingbie,@dianhua,@zhaopian )");
+
+                return_ht2 = I_DBL2.RunParam_SQL(alsql2, param2);
+
+                if ((bool)(return_ht2["return_float"]))
+                {
+                    return "ok|保存资料成功，等待抽奖吧！";
+                }
+                else
+                {
+                    return "err|xxxx|" + "系统故障，保存失败：" + return_ht2["return_errmsg"].ToString();
+                }
+            }
+
+
+        }
+
+
+
         //进行详细的注册资料合法性验证
         if (ht_forUI["zhanghao"].ToString().Trim() == "")
         {
             return "err|zhanghao|没有填写“登录账号”！";
         }
-        if (ht_forUI["zhanghao"].ToString().Trim().IndexOf('>') >=0 || ht_forUI["zhanghao"].ToString().Trim().IndexOf('<') >= 0)
+        if (ht_forUI["zhanghao"].ToString().Trim().IndexOf('>') >= 0 || ht_forUI["zhanghao"].ToString().Trim().IndexOf('<') >= 0)
         {
             return "err|zhanghao|“登录账号”含有禁用字符！";
         }
-        string jc_zh = check_pp_zh(ht_forUI["zhanghao"].ToString().Trim(), "Uloginname") ;
+        string jc_zh = check_pp_zh(ht_forUI["zhanghao"].ToString().Trim(), "Uloginname");
         if (jc_zh != "ok")
         {
             return "err|zhanghao|“登录账号”已被使用，请更换！";
@@ -324,7 +485,7 @@ public class bsuser : System.Web.Services.WebService
             return "err|yaoqingma|没有填写“邀请码”！";
         }
 
-        
+
 
         //进行邀请码的验证
         string yqm = ht_forUI["yaoqingma"].ToString().ToUpper().Trim();
@@ -335,7 +496,7 @@ public class bsuser : System.Web.Services.WebService
         }
         else
         {
-            return "err|yaoqingma|" + rerere.Replace("err|","");
+            return "err|yaoqingma|" + rerere.Replace("err|", "");
         }
 
         //保存注册信息
@@ -392,10 +553,10 @@ public class bsuser : System.Web.Services.WebService
         }
         else
         {
-            return "err|xxxx|"+ "系统故障，保存失败：" + return_ht["return_errmsg"].ToString();
+            return "err|xxxx|" + "系统故障，保存失败：" + return_ht["return_errmsg"].ToString();
         }
 
-      
+
 
     }
 

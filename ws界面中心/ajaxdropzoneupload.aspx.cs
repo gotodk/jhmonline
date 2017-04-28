@@ -5,9 +5,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 
 public partial class ajaxdropzoneupload : System.Web.UI.Page
 {
+
+ 
     protected void Page_Load(object sender, EventArgs e)
     {
         //模拟上传错误
@@ -22,12 +27,12 @@ public partial class ajaxdropzoneupload : System.Web.UI.Page
         try
         {
             //登录状态判定
-            if (UserSession.唯一键 == "")
-            {
-                Response.StatusCode = 500;
-                Response.Write("失败：尚未登录，未能识别当前用户身份");
-                return;
-            }
+            //if (UserSession.唯一键 == "")
+            //{
+            //    Response.StatusCode = 500;
+            //    Response.Write("失败：尚未登录，未能识别当前用户身份");
+            //    return;
+            //}
 
             if (Request.Files.Count < 1)
             {
@@ -90,6 +95,18 @@ public partial class ajaxdropzoneupload : System.Web.UI.Page
 
             string savedFileName = UploadURL + saveDBname;
             file.SaveAs(savedFileName);
+
+          
+            //根据传入的参数，对图片进行二次处理
+            System.Drawing.Image img = System.Drawing.Image.FromFile(savedFileName);
+            System.Drawing.Image img_new = HtmlSnap.ImageHelper.GetThumbnailImageKeepRatio(img, 500, 500);
+            Bitmap map = new Bitmap(img_new);
+            img.Dispose();
+            map.Save(savedFileName);
+       
+            img_new.Dispose();
+            map.Dispose();
+
             Response.StatusCode = 200;
             Response.Write(saveDBpath + saveDBname);
             return;
