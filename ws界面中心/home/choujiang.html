@@ -118,7 +118,7 @@
                                 <div class="12u">
                                     <ul class="actions">
                                         <li id="zhucego_li"><input type="button" value="登记资料，等待抽奖！" id="zhucego"></li>
-                             
+                                        <li id="zhucego_dengdai">等待上传完成。。。</li>
                                     </ul>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@
 
 
         <script type="text/javascript">
-
+            
             //获取url中的参数
             function getUrlParam(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
@@ -173,7 +173,7 @@
 
             $(document).ready(function () {
 
-
+                $("#zhucego_dengdai").hide();
 
                 if ($(".dropzone").length > 0) {
                     //上传控件Dropzone
@@ -203,6 +203,16 @@
                             //change the previewTemplate to use Bootstrap progress bars
                             previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"progress progress-small progress-striped active\"><div class=\"progress-bar progress-bar-success\" data-dz-uploadprogress></div></div>\n  <div class=\"dz-success-mark\"><span></span></div>\n  <div class=\"dz-error-mark\"><span></span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>",
                             init: function () {
+                                this.on("removedfile", function (file) {
+                                    $.ajax({ url: "/ajaxdropzoneupload.aspx?ddidid=" + $(file.previewTemplate).find("img").attr('src') });
+                                    //console.log($(file.previewTemplate).find("img").attr('src'));
+                                });
+                                this.on("addedfile", function (file) {
+                                    
+                                    $("#zhucego_dengdai").show();
+                                    $("#zhucego").hide();
+                                });
+
                                 this.on("success", function (file, servermsg) {
                                     //把服务器返回的数据放入自定义表单
                                     var hide_server_path = document.createElement("input");
@@ -225,7 +235,8 @@
                                         $(file.previewTemplate).find("img").attr('src', servermsg);
                                     }
 
-
+                                    $("#zhucego_dengdai").hide();
+                                    $("#zhucego").show();
 
                                     //调试用，显示服务返回的数据
                                     //file.previewTemplate.appendChild(document.createTextNode(servermsg));

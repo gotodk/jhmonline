@@ -1144,6 +1144,11 @@
                         //change the previewTemplate to use Bootstrap progress bars
                         previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"progress progress-small progress-striped active\"><div class=\"progress-bar progress-bar-success\" data-dz-uploadprogress></div></div>\n  <div class=\"dz-success-mark\"><span></span></div>\n  <div class=\"dz-error-mark\"><span></span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>",
                         init: function () {
+                            this.on("removedfile", function (file) {
+                                $.ajax({ url: "/ajaxdropzoneupload.aspx?ddidid=" + $(file.previewTemplate).find("img").attr('src') });
+                                //console.log($(file.previewTemplate).find("img").attr('src'));
+                            });
+                          
                             this.on("success", function (file, servermsg) {
                                 //把服务器返回的数据放入自定义表单
                                 var hide_server_path = document.createElement("input");

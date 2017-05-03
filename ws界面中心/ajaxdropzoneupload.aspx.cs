@@ -15,6 +15,21 @@ public partial class ajaxdropzoneupload : System.Web.UI.Page
  
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request["ddidid"] != null && Request["ddidid"].ToString() != "")
+        {
+            try
+            {
+                //删除文件
+                File.Delete(Server.MapPath(Request["ddidid"].ToString()));
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            return;
+        }
+
         //模拟上传错误
         //Response.StatusCode = 500;
         //Response.Write("处理上传文件时发生错误:文件格式不正确");
