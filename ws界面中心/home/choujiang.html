@@ -91,7 +91,7 @@
 
                                     <div class="col-sm-10">
                                         <div class="dropzone col-xs-12 col-sm-12 " id="dropzone">
-                                            <span class="icon   fa-cloud "></span>点击开始选择照片或拍照<hr/>
+                                            <span class="icon   fa-cloud "></span>点击开始选择照片<hr/>
                                             <div class="fallback">
                                                 <input type="file" />
                                             </div>
@@ -182,7 +182,7 @@
                         myDropzone = new Dropzone("#dropzone", {
                             paramName: "file1", // The name that will be used to transfer the file
                             maxFilesize: 500, // MB
-                            maxFiles: 20,
+                            maxFiles: 1,
                             url: '/ajaxdropzoneupload.aspx',
                             addRemoveLinks: true,
                             createImageThumbnails: true,
