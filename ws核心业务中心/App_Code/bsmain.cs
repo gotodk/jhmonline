@@ -432,31 +432,18 @@ public class bsmain : System.Web.Services.WebService
             return_ht = I_DBL.RunParam_SQL("select top 1 *,YJfujian as tupian from  ZZZ_HQ_YJ where YJID=@YJID", "数据记录", param);
         }
 
-        if (ht_forUI["mod"].ToString().ToLower() == "fwbg")
+        if (ht_forUI["mod"].ToString().ToLower() == "zmgk")
         {
-            param.Add("@GID", ht_forUI["idforedit"].ToString());
+            param.Add("@ZID", ht_forUI["idforedit"].ToString());
 
-            return_ht = I_DBL.RunParam_SQL("select top 1 *,Gfujian as tupian from  ZZZ_FWBG where GID=@GID", "数据记录", param);
+            return_ht = I_DBL.RunParam_SQL("select top 1 *,Ztupian as tupian from  HH_zmgs where ZID=@ZID", "数据记录", param);
         }
 
-
-        if (ht_forUI["mod"].ToString().ToLower() == "wfsb")
+        if (ht_forUI["mod"].ToString().ToLower() == "hezuoxieyi")
         {
-            param.Add("@SID", ht_forUI["idforedit"].ToString());
+            param.Add("@AID", ht_forUI["idforedit"].ToString());
 
-            return_ht = I_DBL.RunParam_SQL("select top 1 *,Sfujian as tupian from  View_ZZZ_WFSB_list where SID=@SID", "数据记录", param);
-        }
-        if (ht_forUI["mod"].ToString().ToLower() == "sblxbase")
-        {
-            param.Add("@SBID", ht_forUI["idforedit"].ToString());
-
-            return_ht = I_DBL.RunParam_SQL("select top 1 *,SBfujian as tupian from  ZZZ_SBLXBASE where SBID=@SBID", "数据记录", param);
-        }
-        if (ht_forUI["mod"].ToString().ToLower() == "wflj")
-        {
-            param.Add("@LID", ht_forUI["idforedit"].ToString());
-
-            return_ht = I_DBL.RunParam_SQL("select top 1 *,Lfujian as tupian from  ZZZ_WFLJ where LID=@LID", "数据记录", param);
+            return_ht = I_DBL.RunParam_SQL("select top 1 *,Afujian as tupian from  ZZZ_PartnerAgreement where AID=@AID", "数据记录", param);
         }
 
 

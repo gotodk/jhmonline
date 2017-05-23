@@ -44,7 +44,60 @@
     <m_url_formenu_g />
     <SortNameTree>├我的工作台</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
-    <SortMoveDown>-16</SortMoveDown>
+    <SortMoveDown>-18</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5237</ID>
+    <SortID>231</SortID>
+    <SortName>近期联盟动态</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>2</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-bullhorn</m_ico>
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>├近期联盟动态</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-17</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5238</ID>
+    <SortID>232</SortID>
+    <SortName>精选动态</SortName>
+    <SortParentID>231</SortParentID>
+    <SortParentPath>,231,</SortParentPath>
+    <SortOrder>3</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├精选动态</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5239</ID>
+    <SortID>233</SortID>
+    <SortName>全部动态</SortName>
+    <SortParentID>231</SortParentID>
+    <SortParentPath>,231,</SortParentPath>
+    <SortOrder>4</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├全部动态</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5240</ID>
+    <SortID>234</SortID>
+    <SortName>动态管理</SortName>
+    <SortParentID>231</SortParentID>
+    <SortParentPath>,231,</SortParentPath>
+    <SortOrder>5</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└动态管理</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3195</ID>
@@ -52,7 +105,7 @@
     <SortName>内部办公</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>2</SortOrder>
+    <SortOrder>6</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -60,8 +113,8 @@
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>├内部办公</SortNameTree>
-    <SortMoveUp>1</SortMoveUp>
-    <SortMoveDown>-15</SortMoveDown>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>-16</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3223</ID>
@@ -69,7 +122,7 @@
     <SortName>我的预选登记</SortName>
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
-    <SortOrder>3</SortOrder>
+    <SortOrder>7</SortOrder>
     <m_url>/adminht/corepage/bangong/list_yxdd_my.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -78,7 +131,7 @@
     <m_url_formenu_g>/adminht/corepage/bangong/edit_yxdd.aspx</m_url_formenu_g>
     <SortNameTree>│├我的预选登记</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
-    <SortMoveDown>-7</SortMoveDown>
+    <SortMoveDown>-8</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>4223</ID>
@@ -86,7 +139,7 @@
     <SortName>全部预选登记</SortName>
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
-    <SortOrder>4</SortOrder>
+    <SortOrder>8</SortOrder>
     <m_url>/adminht/corepage/bangong/list_yxdd_all.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -95,7 +148,7 @@
     <m_url_formenu_g />
     <SortNameTree>│├全部预选登记</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
-    <SortMoveDown>-6</SortMoveDown>
+    <SortMoveDown>-7</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3200</ID>
@@ -103,7 +156,7 @@
     <SortName>事务申请</SortName>
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
-    <SortOrder>5</SortOrder>
+    <SortOrder>9</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=195</m_url>
     <m_tip />
     <m_tag />
@@ -112,7 +165,7 @@
     <m_url_formenu_g />
     <SortNameTree>│├事务申请</SortNameTree>
     <SortMoveUp>2</SortMoveUp>
-    <SortMoveDown>-5</SortMoveDown>
+    <SortMoveDown>-6</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3205</ID>
@@ -120,7 +173,7 @@
     <SortName>贡献申请</SortName>
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
-    <SortOrder>6</SortOrder>
+    <SortOrder>10</SortOrder>
     <m_url>/adminht/corepage/bangong/edit_gxbgjlb_sq.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -129,7 +182,7 @@
     <m_url_formenu_g />
     <SortNameTree>│├贡献申请</SortNameTree>
     <SortMoveUp>3</SortMoveUp>
-    <SortMoveDown>-4</SortMoveDown>
+    <SortMoveDown>-5</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>4227</ID>
@@ -137,7 +190,7 @@
     <SortName>贡献申请审核</SortName>
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
-    <SortOrder>7</SortOrder>
+    <SortOrder>11</SortOrder>
     <m_url>/adminht/corepage/bangong/list_gxbgjlb_shenhe.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -146,7 +199,7 @@
     <m_url_formenu_g />
     <SortNameTree>│├贡献申请审核</SortNameTree>
     <SortMoveUp>4</SortMoveUp>
-    <SortMoveDown>-3</SortMoveDown>
+    <SortMoveDown>-4</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>4226</ID>
@@ -154,7 +207,7 @@
     <SortName>全部贡献查询</SortName>
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
-    <SortOrder>8</SortOrder>
+    <SortOrder>12</SortOrder>
     <m_url>/adminht/corepage/bangong/list_gxbgjlb.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -163,7 +216,7 @@
     <m_url_formenu_g />
     <SortNameTree>│├全部贡献查询</SortNameTree>
     <SortMoveUp>5</SortMoveUp>
-    <SortMoveDown>-2</SortMoveDown>
+    <SortMoveDown>-3</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>4228</ID>
@@ -171,7 +224,7 @@
     <SortName>全部建议处理</SortName>
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
-    <SortOrder>9</SortOrder>
+    <SortOrder>13</SortOrder>
     <m_url>/adminht/corepage/bangong/list_jianyichuli.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -180,23 +233,40 @@
     <m_url_formenu_g>/adminht/corepage/bangong/edit_jianyiall.aspx</m_url_formenu_g>
     <SortNameTree>│├全部建议处理</SortNameTree>
     <SortMoveUp>6</SortMoveUp>
-    <SortMoveDown>-1</SortMoveDown>
+    <SortMoveDown>-2</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>4224</ID>
     <SortID>218</SortID>
-    <SortName>账目公开</SortName>
+    <SortName>历史账目公示</SortName>
     <SortParentID>190</SortParentID>
     <SortParentPath>,190,</SortParentPath>
-    <SortOrder>10</SortOrder>
-    <m_url>/adminht/corepage/nono.aspx?ssstt=218</m_url>
+    <SortOrder>14</SortOrder>
+    <m_url>/adminht/corepage/bangong/list_zmgk_show.aspx</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
-    <SortNameTree>│└账目公开</SortNameTree>
+    <SortNameTree>│├历史账目公示</SortNameTree>
     <SortMoveUp>7</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>4229</ID>
+    <SortID>223</SortID>
+    <SortName>账目公示维护</SortName>
+    <SortParentID>190</SortParentID>
+    <SortParentPath>,190,</SortParentPath>
+    <SortOrder>15</SortOrder>
+    <m_url>/adminht/corepage/bangong/list_zmgk.aspx</m_url>
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g>/adminht/corepage/bangong/edit_zmgk.aspx</m_url_formenu_g>
+    <SortNameTree>│└账目公示维护</SortNameTree>
+    <SortMoveUp>8</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -205,7 +275,7 @@
     <SortName>我的档案</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>11</SortOrder>
+    <SortOrder>16</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -213,8 +283,8 @@
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>├我的档案</SortNameTree>
-    <SortMoveUp>2</SortMoveUp>
-    <SortMoveDown>-14</SortMoveDown>
+    <SortMoveUp>3</SortMoveUp>
+    <SortMoveDown>-15</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3201</ID>
@@ -222,7 +292,7 @@
     <SortName>我的贡献</SortName>
     <SortParentID>189</SortParentID>
     <SortParentPath>,189,</SortParentPath>
-    <SortOrder>12</SortOrder>
+    <SortOrder>17</SortOrder>
     <m_url>/adminht/corepage/bangong/list_gxbgjlb.aspx?my=my</m_url>
     <m_tip />
     <m_tag />
@@ -239,7 +309,7 @@
     <SortName>更新档案</SortName>
     <SortParentID>189</SortParentID>
     <SortParentPath>,189,</SortParentPath>
-    <SortOrder>13</SortOrder>
+    <SortOrder>18</SortOrder>
     <m_show>不隐藏</m_show>
     <SortNameTree>│├更新档案</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
@@ -251,7 +321,7 @@
     <SortName>基础档案</SortName>
     <SortParentID>197</SortParentID>
     <SortParentPath>,189,197,</SortParentPath>
-    <SortOrder>14</SortOrder>
+    <SortOrder>19</SortOrder>
     <m_url>/adminht/corepage/dangan/edit_myinfo.aspx?my=my</m_url>
     <m_tip />
     <m_tag />
@@ -268,7 +338,7 @@
     <SortName>能力档案</SortName>
     <SortParentID>197</SortParentID>
     <SortParentPath>,189,197,</SortParentPath>
-    <SortOrder>15</SortOrder>
+    <SortOrder>20</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=214</m_url>
     <m_tip />
     <m_tag />
@@ -285,7 +355,7 @@
     <SortName>扩展档案</SortName>
     <SortParentID>197</SortParentID>
     <SortParentPath>,189,197,</SortParentPath>
-    <SortOrder>16</SortOrder>
+    <SortOrder>21</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=215</m_url>
     <m_tip />
     <m_tag />
@@ -302,7 +372,7 @@
     <SortName>我的邀请码</SortName>
     <SortParentID>189</SortParentID>
     <SortParentPath>,189,</SortParentPath>
-    <SortOrder>17</SortOrder>
+    <SortOrder>22</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -319,7 +389,7 @@
     <SortName>申请新邀请码</SortName>
     <SortParentID>198</SortParentID>
     <SortParentPath>,189,198,</SortParentPath>
-    <SortOrder>18</SortOrder>
+    <SortOrder>23</SortOrder>
     <m_url>/adminht/corepage/dangan/edit_getyqm.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -336,7 +406,7 @@
     <SortName>查看发放情况</SortName>
     <SortParentID>198</SortParentID>
     <SortParentPath>,189,198,</SortParentPath>
-    <SortOrder>19</SortOrder>
+    <SortOrder>24</SortOrder>
     <m_url>/adminht/corepage/dangan/list_ffqk.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -353,7 +423,7 @@
     <SortName>邀请记录</SortName>
     <SortParentID>189</SortParentID>
     <SortParentPath>,189,</SortParentPath>
-    <SortOrder>20</SortOrder>
+    <SortOrder>25</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=199</m_url>
     <m_tip />
     <m_tag />
@@ -367,132 +437,231 @@
   <菜单表>
     <ID>3190</ID>
     <SortID>185</SortID>
-    <SortName>顾问联盟</SortName>
+    <SortName>事务大厅</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>21</SortOrder>
+    <SortOrder>26</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
     <m_ico>fa-users</m_ico>
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
-    <SortNameTree>├顾问联盟</SortNameTree>
-    <SortMoveUp>3</SortMoveUp>
-    <SortMoveDown>-13</SortMoveDown>
+    <SortNameTree>├事务大厅</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>-14</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3207</ID>
     <SortID>201</SortID>
-    <SortName> 布告大厅</SortName>
+    <SortName>发起事务</SortName>
     <SortParentID>185</SortParentID>
     <SortParentPath>,185,</SortParentPath>
-    <SortOrder>22</SortOrder>
+    <SortOrder>27</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=201</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
-    <SortNameTree>│├ 布告大厅</SortNameTree>
+    <SortNameTree>│├发起事务</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
-    <SortMoveDown>-1</SortMoveDown>
+    <SortMoveDown>-2</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3208</ID>
     <SortID>202</SortID>
-    <SortName>项目推荐</SortName>
+    <SortName>事务审核</SortName>
     <SortParentID>185</SortParentID>
     <SortParentPath>,185,</SortParentPath>
-    <SortOrder>23</SortOrder>
+    <SortOrder>28</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=202</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
-    <SortNameTree>│└项目推荐</SortNameTree>
+    <SortNameTree>│├事务审核</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5233</ID>
+    <SortID>228</SortID>
+    <SortName>参与事务</SortName>
+    <SortParentID>185</SortParentID>
+    <SortParentPath>,185,</SortParentPath>
+    <SortOrder>29</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└参与事务</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
+    <SortMoveDown>0</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5229</ID>
+    <SortID>224</SortID>
+    <SortName>联盟情报局</SortName>
+    <SortParentID>0</SortParentID>
+    <SortParentPath>,</SortParentPath>
+    <SortOrder>30</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico>fa-puzzle-piece</m_ico>
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>├联盟情报局</SortNameTree>
+    <SortMoveUp>5</SortMoveUp>
+    <SortMoveDown>-13</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5230</ID>
+    <SortID>225</SortID>
+    <SortName>我有情报</SortName>
+    <SortParentID>224</SortParentID>
+    <SortParentPath>,224,</SortParentPath>
+    <SortOrder>31</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├我有情报</SortNameTree>
+    <SortMoveUp>0</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5231</ID>
+    <SortID>226</SortID>
+    <SortName>请求帮助</SortName>
+    <SortParentID>224</SortParentID>
+    <SortParentPath>,224,</SortParentPath>
+    <SortOrder>32</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├请求帮助</SortNameTree>
+    <SortMoveUp>1</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5232</ID>
+    <SortID>227</SortID>
+    <SortName>查阅情报</SortName>
+    <SortParentID>224</SortParentID>
+    <SortParentPath>,224,</SortParentPath>
+    <SortOrder>33</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico />
+    <m_show>不隐藏</m_show>
+    <m_url_formenu_g />
+    <SortNameTree>│└查阅情报</SortNameTree>
+    <SortMoveUp>2</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3192</ID>
     <SortID>187</SortID>
-    <SortName>线下沙龙</SortName>
+    <SortName>联盟活动</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>24</SortOrder>
+    <SortOrder>34</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
     <m_ico>fa-picture-o</m_ico>
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
-    <SortNameTree>├线下沙龙</SortNameTree>
-    <SortMoveUp>4</SortMoveUp>
+    <SortNameTree>├联盟活动</SortNameTree>
+    <SortMoveUp>6</SortMoveUp>
     <SortMoveDown>-12</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3210</ID>
     <SortID>204</SortID>
-    <SortName>活动倡议</SortName>
+    <SortName>发起倡议</SortName>
     <SortParentID>187</SortParentID>
     <SortParentPath>,187,</SortParentPath>
-    <SortOrder>25</SortOrder>
+    <SortOrder>35</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=204</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
-    <SortNameTree>│├活动倡议</SortNameTree>
+    <SortNameTree>│├发起倡议</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
-    <SortMoveDown>-3</SortMoveDown>
+    <SortMoveDown>-5</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>4225</ID>
     <SortID>219</SortID>
-    <SortName>费用审批</SortName>
+    <SortName>预约参与</SortName>
     <SortParentID>187</SortParentID>
     <SortParentPath>,187,</SortParentPath>
-    <SortOrder>26</SortOrder>
+    <SortOrder>36</SortOrder>
+    <m_url />
+    <m_tip />
+    <m_tag />
+    <m_ico />
     <m_show>不隐藏</m_show>
-    <SortNameTree>│├费用审批</SortNameTree>
+    <m_url_formenu_g />
+    <SortNameTree>│├预约参与</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
-    <SortMoveDown>-2</SortMoveDown>
+    <SortMoveDown>-4</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3211</ID>
     <SortID>205</SortID>
-    <SortName>查阅计划</SortName>
+    <SortName>活动审核 </SortName>
     <SortParentID>187</SortParentID>
     <SortParentPath>,187,</SortParentPath>
-    <SortOrder>27</SortOrder>
+    <SortOrder>37</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=205</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
-    <SortNameTree>│├查阅计划</SortNameTree>
+    <SortNameTree>│├活动审核 </SortNameTree>
     <SortMoveUp>2</SortMoveUp>
-    <SortMoveDown>-1</SortMoveDown>
+    <SortMoveDown>-3</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3209</ID>
     <SortID>203</SortID>
-    <SortName>历史活动</SortName>
+    <SortName>预算规划</SortName>
     <SortParentID>187</SortParentID>
     <SortParentPath>,187,</SortParentPath>
-    <SortOrder>28</SortOrder>
+    <SortOrder>38</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=203</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
-    <SortNameTree>│└历史活动</SortNameTree>
+    <SortNameTree>│├预算规划</SortNameTree>
     <SortMoveUp>3</SortMoveUp>
+    <SortMoveDown>-2</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5235</ID>
+    <SortID>229</SortID>
+    <SortName>活动总结</SortName>
+    <SortParentID>187</SortParentID>
+    <SortParentPath>,187,</SortParentPath>
+    <SortOrder>39</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│├活动总结</SortNameTree>
+    <SortMoveUp>4</SortMoveUp>
+    <SortMoveDown>-1</SortMoveDown>
+  </菜单表>
+  <菜单表>
+    <ID>5236</ID>
+    <SortID>230</SortID>
+    <SortName>历史活动</SortName>
+    <SortParentID>187</SortParentID>
+    <SortParentPath>,187,</SortParentPath>
+    <SortOrder>40</SortOrder>
+    <m_show>不隐藏</m_show>
+    <SortNameTree>│└历史活动</SortNameTree>
+    <SortMoveUp>5</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -501,7 +670,7 @@
     <SortName>联盟规范</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>29</SortOrder>
+    <SortOrder>41</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -509,7 +678,7 @@
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>├联盟规范</SortNameTree>
-    <SortMoveUp>5</SortMoveUp>
+    <SortMoveUp>7</SortMoveUp>
     <SortMoveDown>-11</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -518,7 +687,7 @@
     <SortName>查阅宪章</SortName>
     <SortParentID>188</SortParentID>
     <SortParentPath>,188,</SortParentPath>
-    <SortOrder>30</SortOrder>
+    <SortOrder>42</SortOrder>
     <m_url>/adminht/corepage/xianzhang.aspx</m_url>
     <m_tip />
     <m_tag>_blank</m_tag>
@@ -535,7 +704,7 @@
     <SortName>查阅补充规范</SortName>
     <SortParentID>188</SortParentID>
     <SortParentPath>,188,</SortParentPath>
-    <SortOrder>31</SortOrder>
+    <SortOrder>43</SortOrder>
     <m_url>/adminht/corepage/xianzhang_spsp.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -552,7 +721,7 @@
     <SortName>我要提建议</SortName>
     <SortParentID>188</SortParentID>
     <SortParentPath>,188,</SortParentPath>
-    <SortOrder>32</SortOrder>
+    <SortOrder>44</SortOrder>
     <m_url>/adminht/corepage/bangong/list_jianyichuli_my.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -569,7 +738,7 @@
     <SortName>客户合作</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>33</SortOrder>
+    <SortOrder>45</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -577,23 +746,23 @@
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>├客户合作</SortNameTree>
-    <SortMoveUp>6</SortMoveUp>
+    <SortMoveUp>8</SortMoveUp>
     <SortMoveDown>-10</SortMoveDown>
   </菜单表>
   <菜单表>
     <ID>3198</ID>
     <SortID>193</SortID>
-    <SortName>客户档案</SortName>
+    <SortName>机构档案</SortName>
     <SortParentID>191</SortParentID>
     <SortParentPath>,191,</SortParentPath>
-    <SortOrder>34</SortOrder>
-    <m_url>/adminht/corepage/nono.aspx?ssstt=193</m_url>
+    <SortOrder>46</SortOrder>
+    <m_url>/adminht/corepage/hezuo/list_Partners.aspx</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
     <m_show>不隐藏</m_show>
-    <m_url_formenu_g />
-    <SortNameTree>│├客户档案</SortNameTree>
+    <m_url_formenu_g>/adminht/corepage/hezuo/edit_Partners.aspx</m_url_formenu_g>
+    <SortNameTree>│├机构档案</SortNameTree>
     <SortMoveUp>0</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
   </菜单表>
@@ -603,13 +772,13 @@
     <SortName>合同档案</SortName>
     <SortParentID>191</SortParentID>
     <SortParentPath>,191,</SortParentPath>
-    <SortOrder>35</SortOrder>
-    <m_url>/adminht/corepage/nono.aspx?ssstt=194</m_url>
+    <SortOrder>47</SortOrder>
+    <m_url>/adminht/corepage/hezuo/list_agreement.aspx</m_url>
     <m_tip />
     <m_tag />
     <m_ico />
     <m_show>不隐藏</m_show>
-    <m_url_formenu_g />
+    <m_url_formenu_g>/adminht/corepage/hezuo/edit_agreement.aspx</m_url_formenu_g>
     <SortNameTree>│└合同档案</SortNameTree>
     <SortMoveUp>1</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
@@ -620,15 +789,15 @@
     <SortName>财务辅助</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>36</SortOrder>
+    <SortOrder>48</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
     <m_ico>fa-credit-card</m_ico>
-    <m_show>不隐藏</m_show>
+    <m_show>隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>├财务辅助</SortNameTree>
-    <SortMoveUp>7</SortMoveUp>
+    <SortMoveUp>9</SortMoveUp>
     <SortMoveDown>-9</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -637,7 +806,7 @@
     <SortName>常规记账</SortName>
     <SortParentID>192</SortParentID>
     <SortParentPath>,192,</SortParentPath>
-    <SortOrder>37</SortOrder>
+    <SortOrder>49</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=209</m_url>
     <m_tip />
     <m_tag />
@@ -654,7 +823,7 @@
     <SortName>上传备份</SortName>
     <SortParentID>192</SortParentID>
     <SortParentPath>,192,</SortParentPath>
-    <SortOrder>38</SortOrder>
+    <SortOrder>50</SortOrder>
     <m_url>/adminht/corepage/nono.aspx?ssstt=210</m_url>
     <m_tip />
     <m_tag />
@@ -671,7 +840,7 @@
     <SortName>考勤管理</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>39</SortOrder>
+    <SortOrder>51</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -679,7 +848,7 @@
     <m_show>隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>├考勤管理</SortNameTree>
-    <SortMoveUp>8</SortMoveUp>
+    <SortMoveUp>10</SortMoveUp>
     <SortMoveDown>-8</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -688,7 +857,7 @@
     <SortName>签到</SortName>
     <SortParentID>80</SortParentID>
     <SortParentPath>,80,</SortParentPath>
-    <SortOrder>40</SortOrder>
+    <SortOrder>52</SortOrder>
     <m_url>/adminht/corepage/qiandao/qdgo.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -704,7 +873,7 @@
     <SortName>我的签到日历</SortName>
     <SortParentID>80</SortParentID>
     <SortParentPath>,80,</SortParentPath>
-    <SortOrder>41</SortOrder>
+    <SortOrder>53</SortOrder>
     <m_url>/adminht/corepage/qiandao/qd_rili.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -720,7 +889,7 @@
     <SortName>部门签到记录</SortName>
     <SortParentID>80</SortParentID>
     <SortParentPath>,80,</SortParentPath>
-    <SortOrder>42</SortOrder>
+    <SortOrder>54</SortOrder>
     <m_url>/adminht/corepage/qiandao/list_qd.aspx?bm=bm</m_url>
     <m_tip />
     <m_tag />
@@ -737,7 +906,7 @@
     <SortName>轨迹浏览</SortName>
     <SortParentID>80</SortParentID>
     <SortParentPath>,80,</SortParentPath>
-    <SortOrder>43</SortOrder>
+    <SortOrder>55</SortOrder>
     <m_url>/adminht/corepage/qiandao/qd_guiji_s.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -754,7 +923,7 @@
     <SortName>签到设置</SortName>
     <SortParentID>80</SortParentID>
     <SortParentPath>,80,</SortParentPath>
-    <SortOrder>44</SortOrder>
+    <SortOrder>56</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -770,7 +939,7 @@
     <SortName>特定地点</SortName>
     <SortParentID>121</SortParentID>
     <SortParentPath>,80,121,</SortParentPath>
-    <SortOrder>45</SortOrder>
+    <SortOrder>57</SortOrder>
     <m_url>/adminht/corepage/qiandao/list_dd.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -787,7 +956,7 @@
     <SortName>签到时间</SortName>
     <SortParentID>121</SortParentID>
     <SortParentPath>,80,121,</SortParentPath>
-    <SortOrder>46</SortOrder>
+    <SortOrder>58</SortOrder>
     <m_url>/adminht/corepage/qiandao/edit_cs.aspx?idforedit=10000&amp;fff=1</m_url>
     <m_tip />
     <m_tag />
@@ -803,7 +972,7 @@
     <SortName>工作计划</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>47</SortOrder>
+    <SortOrder>59</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -811,7 +980,7 @@
     <m_show>隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>├工作计划</SortNameTree>
-    <SortMoveUp>9</SortMoveUp>
+    <SortMoveUp>11</SortMoveUp>
     <SortMoveDown>-7</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -820,7 +989,7 @@
     <SortName>新建计划</SortName>
     <SortParentID>83</SortParentID>
     <SortParentPath>,83,</SortParentPath>
-    <SortOrder>48</SortOrder>
+    <SortOrder>60</SortOrder>
     <m_url>/adminht/corepage/gzjh/edit_workplan.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -836,7 +1005,7 @@
     <SortName>我的计划</SortName>
     <SortParentID>83</SortParentID>
     <SortParentPath>,83,</SortParentPath>
-    <SortOrder>49</SortOrder>
+    <SortOrder>61</SortOrder>
     <m_url>/adminht/corepage/gzjh/list_workplan_my.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -852,7 +1021,7 @@
     <SortName>部门工作计划</SortName>
     <SortParentID>83</SortParentID>
     <SortParentPath>,83,</SortParentPath>
-    <SortOrder>50</SortOrder>
+    <SortOrder>62</SortOrder>
     <m_url>/adminht/corepage/gzjh/list_workplan.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -869,7 +1038,7 @@
     <SortName>会签管理</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>51</SortOrder>
+    <SortOrder>63</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -877,7 +1046,7 @@
     <m_show>隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>├会签管理</SortNameTree>
-    <SortMoveUp>10</SortMoveUp>
+    <SortMoveUp>12</SortMoveUp>
     <SortMoveDown>-6</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -886,7 +1055,7 @@
     <SortName>发起会签</SortName>
     <SortParentID>96</SortParentID>
     <SortParentPath>,96,</SortParentPath>
-    <SortOrder>52</SortOrder>
+    <SortOrder>64</SortOrder>
     <m_url>/adminht/corepage/huiqian/fqhq.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -902,7 +1071,7 @@
     <SortName>参与会签</SortName>
     <SortParentID>96</SortParentID>
     <SortParentPath>,96,</SortParentPath>
-    <SortOrder>53</SortOrder>
+    <SortOrder>65</SortOrder>
     <m_url>/adminht/corepage/huiqian/cyhq_list_s.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -918,7 +1087,7 @@
     <SortName>我参与的会签</SortName>
     <SortParentID>96</SortParentID>
     <SortParentPath>,96,</SortParentPath>
-    <SortOrder>54</SortOrder>
+    <SortOrder>66</SortOrder>
     <m_url>/adminht/corepage/huiqian/list_hqmy.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -934,7 +1103,7 @@
     <SortName>全部会签记录</SortName>
     <SortParentID>96</SortParentID>
     <SortParentPath>,96,</SortParentPath>
-    <SortOrder>55</SortOrder>
+    <SortOrder>67</SortOrder>
     <m_url>/adminht/corepage/huiqian/list_hqall.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -950,7 +1119,7 @@
     <SortName>知识管理</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>56</SortOrder>
+    <SortOrder>68</SortOrder>
     <m_url>/adminht/corepage/bas/list_zhishi.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -958,7 +1127,7 @@
     <m_show>隐藏</m_show>
     <m_url_formenu_g>/adminht/corepage/bas/edit_zhishi.aspx</m_url_formenu_g>
     <SortNameTree>├知识管理</SortNameTree>
-    <SortMoveUp>11</SortMoveUp>
+    <SortMoveUp>13</SortMoveUp>
     <SortMoveDown>-5</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -967,14 +1136,14 @@
     <SortName>基础数据</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>57</SortOrder>
+    <SortOrder>69</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
     <m_ico>fa-info-circle</m_ico>
     <m_show>不隐藏</m_show>
     <SortNameTree>├基础数据</SortNameTree>
-    <SortMoveUp>12</SortMoveUp>
+    <SortMoveUp>14</SortMoveUp>
     <SortMoveDown>-4</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -983,7 +1152,7 @@
     <SortName>账号信息维护</SortName>
     <SortParentID>43</SortParentID>
     <SortParentPath>,43,</SortParentPath>
-    <SortOrder>58</SortOrder>
+    <SortOrder>70</SortOrder>
     <m_url>/adminht/corepage/bas/list_userinfo.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1000,7 +1169,7 @@
     <SortName>维护全局公告</SortName>
     <SortParentID>43</SortParentID>
     <SortParentPath>,43,</SortParentPath>
-    <SortOrder>59</SortOrder>
+    <SortOrder>71</SortOrder>
     <m_url>/adminht/corepage/bas/list_gonggao.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1017,7 +1186,7 @@
     <SortName>部门信息维护</SortName>
     <SortParentID>43</SortParentID>
     <SortParentPath>,43,</SortParentPath>
-    <SortOrder>60</SortOrder>
+    <SortOrder>72</SortOrder>
     <m_url>/adminht/menu_pub_edit.aspx?tb=class_org</m_url>
     <m_tip />
     <m_tag />
@@ -1033,7 +1202,7 @@
     <SortName>知识分类选项</SortName>
     <SortParentID>43</SortParentID>
     <SortParentPath>,43,</SortParentPath>
-    <SortOrder>61</SortOrder>
+    <SortOrder>73</SortOrder>
     <m_url>/adminht/menu_pub_edit.aspx?tb=class_zhishi</m_url>
     <m_tip />
     <m_tag />
@@ -1049,7 +1218,7 @@
     <SortName>我的消息</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>62</SortOrder>
+    <SortOrder>74</SortOrder>
     <m_url>/adminht/corepage/bas/list_tixing.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1057,7 +1226,7 @@
     <m_show>不隐藏</m_show>
     <m_url_formenu_g />
     <SortNameTree>├我的消息</SortNameTree>
-    <SortMoveUp>13</SortMoveUp>
+    <SortMoveUp>15</SortMoveUp>
     <SortMoveDown>-3</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -1066,7 +1235,7 @@
     <SortName>公告通知</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>63</SortOrder>
+    <SortOrder>75</SortOrder>
     <m_url>/adminht/corepage/bas/list_ss_gonggao.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1074,7 +1243,7 @@
     <m_show>不隐藏</m_show>
     <m_url_formenu_g>/adminht/corepage/bas/edit_gonggao.aspx.*showinfo=2</m_url_formenu_g>
     <SortNameTree>├公告通知</SortNameTree>
-    <SortMoveUp>14</SortMoveUp>
+    <SortMoveUp>16</SortMoveUp>
     <SortMoveDown>-2</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -1083,14 +1252,14 @@
     <SortName>开发专用</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>64</SortOrder>
+    <SortOrder>76</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
     <m_ico>fa-cogs</m_ico>
     <m_show>不隐藏</m_show>
     <SortNameTree>├开发专用</SortNameTree>
-    <SortMoveUp>15</SortMoveUp>
+    <SortMoveUp>17</SortMoveUp>
     <SortMoveDown>-1</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -1099,7 +1268,7 @@
     <SortName>权限数据维护</SortName>
     <SortParentID>28</SortParentID>
     <SortParentPath>,28,</SortParentPath>
-    <SortOrder>65</SortOrder>
+    <SortOrder>77</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -1115,7 +1284,7 @@
     <SortName>系统菜单调整</SortName>
     <SortParentID>27</SortParentID>
     <SortParentPath>,28,27,</SortParentPath>
-    <SortOrder>66</SortOrder>
+    <SortOrder>78</SortOrder>
     <m_url>/adminht/auth_menu_edit.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1131,7 +1300,7 @@
     <SortName>权限枚举维护</SortName>
     <SortParentID>27</SortParentID>
     <SortParentPath>,28,27,</SortParentPath>
-    <SortOrder>67</SortOrder>
+    <SortOrder>79</SortOrder>
     <m_url>/adminht/auth_enum_list.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1147,7 +1316,7 @@
     <SortName>权限组维护</SortName>
     <SortParentID>27</SortParentID>
     <SortParentPath>,28,27,</SortParentPath>
-    <SortOrder>68</SortOrder>
+    <SortOrder>80</SortOrder>
     <m_url>/adminht/auth_group_edit.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1163,7 +1332,7 @@
     <SortName>基本表单demo</SortName>
     <SortParentID>28</SortParentID>
     <SortParentPath>,28,</SortParentPath>
-    <SortOrder>69</SortOrder>
+    <SortOrder>81</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -1179,7 +1348,7 @@
     <SortName>数据列表demo</SortName>
     <SortParentID>13</SortParentID>
     <SortParentPath>,28,13,</SortParentPath>
-    <SortOrder>70</SortOrder>
+    <SortOrder>82</SortOrder>
     <m_url>/adminht/linshi/demo_dblist.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1195,7 +1364,7 @@
     <SortName>编辑保存demo</SortName>
     <SortParentID>13</SortParentID>
     <SortParentPath>,28,13,</SortParentPath>
-    <SortOrder>71</SortOrder>
+    <SortOrder>83</SortOrder>
     <m_url>/adminht/linshi/demo_pz_edit.aspx?fff=1&amp;idforedit=150915000006</m_url>
     <m_tip />
     <m_tag />
@@ -1211,7 +1380,7 @@
     <SortName>提交表单demo</SortName>
     <SortParentID>13</SortParentID>
     <SortParentPath>,28,13,</SortParentPath>
-    <SortOrder>72</SortOrder>
+    <SortOrder>84</SortOrder>
     <m_url>/adminht/linshi/demo_pz_add.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1227,7 +1396,7 @@
     <SortName>扫描条码例子</SortName>
     <SortParentID>13</SortParentID>
     <SortParentPath>,28,13,</SortParentPath>
-    <SortOrder>73</SortOrder>
+    <SortOrder>85</SortOrder>
     <m_url>/adminht/linshi/demo_tiaomasoamiao.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1243,7 +1412,7 @@
     <SortName>上传头像demo</SortName>
     <SortParentID>13</SortParentID>
     <SortParentPath>,28,13,</SortParentPath>
-    <SortOrder>74</SortOrder>
+    <SortOrder>86</SortOrder>
     <m_url>/adminht/demo_uploadface.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1259,7 +1428,7 @@
     <SortName>通用配置维护</SortName>
     <SortParentID>28</SortParentID>
     <SortParentPath>,28,</SortParentPath>
-    <SortOrder>75</SortOrder>
+    <SortOrder>87</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
@@ -1275,7 +1444,7 @@
     <SortName>浏览表单</SortName>
     <SortParentID>37</SortParentID>
     <SortParentPath>,28,37,</SortParentPath>
-    <SortOrder>76</SortOrder>
+    <SortOrder>88</SortOrder>
     <m_url>/adminht/baseset/bs_showformmain.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1292,7 +1461,7 @@
     <SortName>浏览表单字段</SortName>
     <SortParentID>37</SortParentID>
     <SortParentPath>,28,37,</SortParentPath>
-    <SortOrder>77</SortOrder>
+    <SortOrder>89</SortOrder>
     <m_url>/adminht/baseset/bs_showformSubInfo.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1309,7 +1478,7 @@
     <SortName>浏览表单弹窗</SortName>
     <SortParentID>37</SortParentID>
     <SortParentPath>,28,37,</SortParentPath>
-    <SortOrder>78</SortOrder>
+    <SortOrder>90</SortOrder>
     <m_url>/adminht/baseset/bs_showformSubDialog.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1326,7 +1495,7 @@
     <SortName>浏览通用列表</SortName>
     <SortParentID>37</SortParentID>
     <SortParentPath>,28,37,</SortParentPath>
-    <SortOrder>79</SortOrder>
+    <SortOrder>91</SortOrder>
     <m_url>/adminht/baseset/bs_showalllist.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1343,7 +1512,7 @@
     <SortName>浏览通用列表字段</SortName>
     <SortParentID>37</SortParentID>
     <SortParentPath>,28,37,</SortParentPath>
-    <SortOrder>80</SortOrder>
+    <SortOrder>92</SortOrder>
     <m_url>/adminht/baseset/bs_showalllist_field.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1360,14 +1529,14 @@
     <SortName>系统权限配置</SortName>
     <SortParentID>0</SortParentID>
     <SortParentPath>,</SortParentPath>
-    <SortOrder>81</SortOrder>
+    <SortOrder>93</SortOrder>
     <m_url />
     <m_tip />
     <m_tag />
     <m_ico>fa-key</m_ico>
     <m_show>不隐藏</m_show>
     <SortNameTree>└系统权限配置</SortNameTree>
-    <SortMoveUp>16</SortMoveUp>
+    <SortMoveUp>18</SortMoveUp>
     <SortMoveDown>0</SortMoveDown>
   </菜单表>
   <菜单表>
@@ -1376,7 +1545,7 @@
     <SortName>用户权限分配</SortName>
     <SortParentID>1</SortParentID>
     <SortParentPath>,1,</SortParentPath>
-    <SortOrder>82</SortOrder>
+    <SortOrder>94</SortOrder>
     <m_url>/adminht/auth_oneuser.aspx</m_url>
     <m_tip />
     <m_tag />
@@ -1392,7 +1561,7 @@
     <SortName>用户权限浏览</SortName>
     <SortParentID>1</SortParentID>
     <SortParentPath>,1,</SortParentPath>
-    <SortOrder>83</SortOrder>
+    <SortOrder>95</SortOrder>
     <m_url>/adminht/auth_userlist.aspx</m_url>
     <m_tip />
     <m_tag />

@@ -114,7 +114,7 @@ public partial class ajaxdropzoneupload : System.Web.UI.Page
           
             //根据传入的参数，对图片进行二次处理
             System.Drawing.Image img = System.Drawing.Image.FromFile(savedFileName);
-            System.Drawing.Image img_new = HtmlSnap.ImageHelper.GetThumbnailImageKeepRatio(img, 500, 500);
+            System.Drawing.Image img_new = HtmlSnap.ImageHelper.GetThumbnailImageKeepRatio(img, 1000, 1000);
             Bitmap map = new Bitmap(img_new);
             img.Dispose();
             map.Save(savedFileName);
