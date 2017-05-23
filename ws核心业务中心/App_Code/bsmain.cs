@@ -445,8 +445,18 @@ public class bsmain : System.Web.Services.WebService
 
             return_ht = I_DBL.RunParam_SQL("select top 1 *,Afujian as tupian from  ZZZ_PartnerAgreement where AID=@AID", "数据记录", param);
         }
+        if (ht_forUI["mod"].ToString().ToLower() == "hdcy_ckzl")
+        {
+            param.Add("@HID", ht_forUI["idforedit"].ToString());
 
+            return_ht = I_DBL.RunParam_SQL("select top 1 *,H_yg_zlfujian as tupian from  ZZZ_huodong where HID=@HID", "数据记录", param);
+        }
+        if (ht_forUI["mod"].ToString().ToLower() == "hdcy_hdzp")
+        {
+            param.Add("@HID", ht_forUI["idforedit"].ToString());
 
+            return_ht = I_DBL.RunParam_SQL("select top 1 *,H_ff_zhaopian as tupian from  ZZZ_huodong where HID=@HID", "数据记录", param);
+        }
         if ((bool)(return_ht["return_float"]))
         {
             DataTable redb = ((DataSet)return_ht["return_ds"]).Tables["数据记录"].Copy();
