@@ -53,11 +53,12 @@
 									
 									<span class="white" id="denglu_title" runat="server">系统名称</span>
 								</h1>
-						 
+                          
+						               
 							</div>
 
 							<div class="space-6"></div>
-
+                     
 							<div class="position-relative">
 								<div id="login-box" class="login-box visible widget-box no-border">
 									<div class="widget-body">
@@ -161,7 +162,7 @@
 				</div><!-- /.row -->
 			</div><!-- /.main-content -->
 		</div><!-- /.main-container -->
-
+     
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
@@ -297,6 +298,16 @@
                     }
                    
                 });
+
+
+
+                //测试获取openid
+                //var htmlobj = $.ajax({ url: "/qyapi_dlhd.aspx?getopenid=1&nowuaid=xxx", async: false });
+                //$("#tiaoshi").text( htmlobj.responseText);
+
+
+
+
             });
           </script>
 
@@ -377,7 +388,51 @@
 		</script>
 
 
+        <%--  微信公众号自动登录判定--%>
+		<script type="text/javascript">
+		    function isWeiXin() {
+		        var ua = window.navigator.userAgent.toLowerCase();
+		        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+		            return true;
+		        } else {
+		            return false;
+		        }
+		    }
+		    //var wx_username_fra = $(window.frames["wxcheckzdy"].document);
+		    jQuery(function ($) {
+		  
+		        if (isWeiXin()) {
+                    
  
+		            var openid=getUrlParam("openid");
+		            switch(openid) 
+		            { 
+		                case "":
+		                    //没有id参数就跳转
+		                    var wx_url = "/qyapi_dlhd.aspx?getopenid=1&nowuaid=xxx";
+		                    top.location.href = wx_url;
+		                    break; 
+		                case "err": 
+		                   
+		                    break; 
+		                default:
+		                    //有正常openid参数就尝试自动登录
+		                    var restr = uncMe(openid, "mima");
+		                    alert(restr);
+		            } 
+
+                    //参数不是
+		       
+
+		        }
+
+		      
+			     
+			   
+			});
+
+			
+		</script>
 
 
 

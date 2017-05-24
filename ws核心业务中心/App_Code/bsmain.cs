@@ -904,7 +904,8 @@ public class bsmain : System.Web.Services.WebService
     [WebMethod(MessageName = "获取微信自动登录参数", Description = "获取微信自动登录参数")]
     public string GetInfoFromUsername_wx(string username_wx)
     {
- 
+        //命名的问题，为了不改老代码
+        string wxopenid = username_wx;
         //初始化返回值
         DataSet dsreturn = initReturnDataSet().Clone();
         dsreturn.Tables["返回值单条"].Rows.Add(new string[] { "err", "初始化" });
@@ -916,14 +917,12 @@ public class bsmain : System.Web.Services.WebService
         I_Dblink I_DBL = (new DBFactory()).DbLinkSqlMain("");
 
         Hashtable param = new Hashtable();
-        param.Add("@Uloginname", username_wx);
+        param.Add("@wxopenid", wxopenid);
 
-
-
-
+ 
         Hashtable return_ht = new Hashtable();
 
-        return_ht = I_DBL.RunParam_SQL("select top 1 UAid, Uloginname, Uloginpassword from auth_users_auths where Uloginname=@Uloginname", "数据记录", param);
+        return_ht = I_DBL.RunParam_SQL("select top 1 UAid, Uloginname, Uloginpassword from view_ZZZ_userinfo_ex where wxopenid=@wxopenid", "数据记录", param);
 
 
         if ((bool)(return_ht["return_float"]))
@@ -932,7 +931,7 @@ public class bsmain : System.Web.Services.WebService
 
             if (redb.Rows.Count < 1)
             {
-                return "";
+                return "|";
             }
             else
             {
@@ -945,14 +944,14 @@ public class bsmain : System.Web.Services.WebService
         }
         else
         {
-            return "";
+            return "|";
         }
 
 
 
 
 
-        return "";
+        return "|";
     }
 
 
