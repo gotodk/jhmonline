@@ -628,9 +628,10 @@ public class bssystem : System.Web.Services.WebService
     /// <param name="zhanghao">账号</param>
     /// <param name="mima">密码</param>
     /// <param name="ip">ip地址</param>
+    /// <param name="openid">微信openid</param>
     /// <returns></returns>
     [WebMethod(MessageName = "后台管理登录验证", Description = "后台管理登录验证")]
-    public DataSet CheckLogin_Back(string zhanghao, string mima, string ip)
+    public DataSet CheckLogin_Back(string zhanghao, string mima, string ip,string openid)
     {
 
 
@@ -720,6 +721,14 @@ public class bssystem : System.Web.Services.WebService
                 //记录登录ip
                 ArrayList lasp = new ArrayList();
                 lasp.Add("INSERT INTO auth_login_ip (Lid,LUAid,Lip) VALUES ('" + CombGuid.GetNewCombGuid("IP") + "','" + redb.Rows[0]["UAid"].ToString() + "','" + ip + "')");
+                //记录微信openid
+                if (openid != "")
+                {
+                    lasp.Add("UPDATE ZZZ_userinfo set wxopenid='未绑定' where wxopenid='" + openid + "'");
+                    lasp.Add("UPDATE ZZZ_userinfo set wxopenid='"+ openid + "' where UAid='"+ redb.Rows[0]["UAid"].ToString() + "'");
+                }
+              
+
                 I_DBL.RunParam_SQL(lasp);
                 dsreturn.Tables["返回值单条"].Rows[0]["执行结果"] = "ok";
                 dsreturn.Tables["返回值单条"].Rows[0]["提示文本"] = "";

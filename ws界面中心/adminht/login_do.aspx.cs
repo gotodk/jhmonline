@@ -30,11 +30,18 @@ public partial class login_do : System.Web.UI.Page
         {
             return;
         }
+        string openid = "";
         string jkname = Request["jkname"].ToString();
         ajaxrun = Request["ajaxrun"].ToString();
         string zhanghao = Request["zhanghao"].ToString().Trim();
         string mima = Request["mima"].ToString().Trim();
-    
+
+        if (Request["openid_ss"] != null && Request["openid_ss"].ToString().Trim() != "")
+        {
+            openid = Request["openid_ss"].ToString().Trim();
+        }
+        
+
         if (ajaxrun == "backlogin")
         { 
 
@@ -66,7 +73,7 @@ public partial class login_do : System.Web.UI.Page
 
             //调用执行方法获取数据
 
-            object[] re_dsi = IPC.Call(jkname, new object[] { zhanghao, mima,AuthComm.IP });
+            object[] re_dsi = IPC.Call(jkname, new object[] { zhanghao, mima,AuthComm.IP , openid });
             if (re_dsi[0].ToString() == "ok")
             {
 

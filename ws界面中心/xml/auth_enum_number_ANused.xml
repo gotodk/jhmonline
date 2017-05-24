@@ -112,6 +112,36 @@
     <ANused>1</ANused>
   </Unumber1>
   <Unumber1>
+    <ANID>E-A4A600B1E928-9556A186-9B1A-4E92-B905</ANID>
+    <ANClass>Unumber1</ANClass>
+    <ANClassName>后台菜单权限</ANClassName>
+    <ANBaseName>客户合作</ANBaseName>
+    <ANBaseNumber>1024</ANBaseNumber>
+    <ANBaseNumber_p>10</ANBaseNumber_p>
+    <ANextendID>191</ANextendID>
+    <ANused>1</ANused>
+  </Unumber1>
+  <Unumber1>
+    <ANID>E-A4A600B1E91D-9F8156DB-F828-4388-AA16</ANID>
+    <ANClass>Unumber1</ANClass>
+    <ANClassName>后台菜单权限</ANClassName>
+    <ANBaseName>联盟活动-活动审核与总结</ANBaseName>
+    <ANBaseNumber>512</ANBaseNumber>
+    <ANBaseNumber_p>9</ANBaseNumber_p>
+    <ANextendID>205</ANextendID>
+    <ANused>1</ANused>
+  </Unumber1>
+  <Unumber1>
+    <ANID>E-A4A600B1E919-348D53A1-A8D0-4126-A3F1</ANID>
+    <ANClass>Unumber1</ANClass>
+    <ANClassName>后台菜单权限</ANClassName>
+    <ANBaseName>联盟项目事务-事务展示审核</ANBaseName>
+    <ANBaseNumber>256</ANBaseNumber>
+    <ANBaseNumber_p>8</ANBaseNumber_p>
+    <ANextendID>202</ANextendID>
+    <ANused>1</ANused>
+  </Unumber1>
+  <Unumber1>
     <ANID>E-A4A600B1E8F5-A377415C-F52B-41EA-83CA</ANID>
     <ANClass>Unumber1</ANClass>
     <ANClassName>后台菜单权限</ANClassName>
@@ -149,6 +179,16 @@
     <ANBaseNumber>8</ANBaseNumber>
     <ANBaseNumber_p>3</ANBaseNumber_p>
     <ANextendID>217</ANextendID>
+    <ANused>1</ANused>
+  </Unumber1>
+  <Unumber1>
+    <ANID>E-A4A600B1E917-7116AB79-0F6F-479A-8B22</ANID>
+    <ANClass>Unumber1</ANClass>
+    <ANClassName>后台菜单权限</ANClassName>
+    <ANBaseName>内部办公-账目公示维护</ANBaseName>
+    <ANBaseNumber>128</ANBaseNumber>
+    <ANBaseNumber_p>7</ANBaseNumber_p>
+    <ANextendID>223</ANextendID>
     <ANused>1</ANused>
   </Unumber1>
   <Unumber1>

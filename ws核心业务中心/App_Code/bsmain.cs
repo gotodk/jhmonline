@@ -922,7 +922,7 @@ public class bsmain : System.Web.Services.WebService
  
         Hashtable return_ht = new Hashtable();
 
-        return_ht = I_DBL.RunParam_SQL("select top 1 UAid, Uloginname, Uloginpassword from view_ZZZ_userinfo_ex where wxopenid=@wxopenid", "数据记录", param);
+        return_ht = I_DBL.RunParam_SQL("select top 1 UAid, Uloginname, Uloginpassword from view_ZZZ_userinfo_ex where wxopenid=@wxopenid and wxopenid is not null and wxopenid <> ''", "数据记录", param);
 
 
         if ((bool)(return_ht["return_float"]))

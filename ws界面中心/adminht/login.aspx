@@ -82,6 +82,7 @@
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="password" class="form-control" placeholder="密码" name="mima"  id="mima" />
+                                                            <input type="hidden"  name="openid_ss"  id="openid_ss" />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
 													</label> 
@@ -184,7 +185,10 @@
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='/assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
 		</script>
-          
+            <script src="/assets/js/bootstrap.js"></script>
+              <script src="/assets/js/jquery-ui.custom.js"></script>
+    <script src="/assets/js/jquery.ui.touch-punch.js"></script>
+            <script src="/assets/js/bootbox.js"></script>
   <script src="/assets/js/jquery.cookie.js"></script>
   <script type="text/javascript" src="/assets/js/desforcsharp.js?rrr=12345"></script>
 		<!-- inline scripts related to this page -->
@@ -300,12 +304,7 @@
                 });
 
 
-
-                //测试获取openid
-                //var htmlobj = $.ajax({ url: "/qyapi_dlhd.aspx?getopenid=1&nowuaid=xxx", async: false });
-                //$("#tiaoshi").text( htmlobj.responseText);
-
-
+ 
 
 
             });
@@ -418,10 +417,47 @@
 		                default:
 		                    //有正常openid参数就尝试自动登录
 		                    var restr = uncMe(openid, "mima");
-		                    alert(restr);
-		            } 
+		                    var arr_restr = restr.split('|');
+		                    if (arr_restr.length == 3)
+		                    {
+		                        if (arr_restr[1] != "" && arr_restr[2] != "") {
+		                            bootbox.dialog({
+		                                message: "此微信账号已自动绑定了联盟账号，<br/>联盟账号：”" + arr_restr[1] + "“，<br/>是否自动登录？",
+		                                title: "自动登录选择",
+		                                buttons: {
+		                                    Cancel: {
+		                                        label: "使用其他账号",
+		                                        className: "btn-default",
+		                                        callback: function () {
+		                                            ;
+		                                        }
+		                                    }
+                                            , OK: {
+                                                label: "自动登录",
+                                                className: "btn-primary",
+                                                callback: function () {
+                                                    $("#zhanghao").val(arr_restr[1]);
+                                                    $("#mima").val(uncMe(arr_restr[2], "mima"));
+                                                    gogoajax1(formid1, buttonid1, url1, jkname_save1);
+                                                }
+                                            }
+		                                }
+		                            });
 
-                    //参数不是
+
+
+
+		                        }
+		                        
+		                        //将openid放到隐藏区域一同提交
+		                        $("#openid_ss").val(arr_restr[0]);
+		                        //alert(arr_restr[0]);
+
+		                    }
+		                 
+
+		            } 
+ 
 		       
 
 		        }
