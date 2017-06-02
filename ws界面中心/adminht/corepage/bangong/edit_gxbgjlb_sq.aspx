@@ -31,8 +31,8 @@
 
                 $("#bianji_top").hide();
 
-             
-
+             var nowloginuser = "<%=UserSession.唯一键%>";
+$("#G_gxr").val(nowloginuser);
                   });
         </script>
 </asp:Content>
