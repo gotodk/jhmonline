@@ -59,11 +59,14 @@ public partial class qyapi_dlhd : System.Web.UI.Page
         string AppID = ConfigurationManager.AppSettings["AppID"].ToString();
         string AppSecret = ConfigurationManager.AppSettings["AppSecret"].ToString();
 
-        if (Request["getopenid"] != null && Request["getopenid"].ToString() == "1" && Request["nowuaid"] != null)
+        if (Request["getopenid"] != null && Request["getopenid"].ToString() == "1" && Request["u"] != null)
         {
+           
             //获取当前操作用户的openid，会进行跳转
-            string urlto = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + AppID + "&redirect_uri=" + redirect_uri + "&response_type=code&scope=snsapi_base&state=" + Request["nowuaid"].ToString() + "#wechat_redirect";
+            string urlto = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + AppID + "&redirect_uri=" + redirect_uri + "&response_type=code&scope=snsapi_base&state=000#wechat_redirect";
+            Response.Cookies["u"].Value = Request["u"].ToString();
             Response.Redirect(urlto);
+
             return;
         }
         if (Request["code"] != null && Request["state"] != null)
@@ -104,7 +107,14 @@ public partial class qyapi_dlhd : System.Web.UI.Page
             {
                 Response.Write(ex.ToString());
             }
-            Response.Redirect("/adminht/login.aspx?openid=" + openid);
+            string u = "";
+            if (Request.Cookies["u"] != null)
+            {
+                u = Request.Cookies["u"].Value;
+            }
+            
+            
+            Response.Redirect("/adminht/login.aspx?openid=" + openid + "&u=" + u);
             return;
         }
 

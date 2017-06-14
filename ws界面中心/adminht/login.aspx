@@ -403,12 +403,13 @@
 		        if (isWeiXin()) {
                     
  
-		            var openid=getUrlParam("openid");
+		            var openid = getUrlParam("openid");
+		            var u = getUrlParam("u");
 		            switch(openid) 
 		            { 
 		                case "":
 		                    //没有id参数就跳转
-		                    var wx_url = "/qyapi_dlhd.aspx?getopenid=1&nowuaid=xxx";
+		                    var wx_url = "/qyapi_dlhd.aspx?getopenid=1&u="+u;
 		                    top.location.href = wx_url;
 		                    break; 
 		                case "err": 
