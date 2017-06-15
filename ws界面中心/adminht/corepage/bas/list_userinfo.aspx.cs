@@ -22,6 +22,9 @@ public partial class bas_list_userinfo : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        //验证权限
+        AuthComm.chekcAuth_fromsession("4", UserSession.最终权值_后台菜单权限, true);
+
         //列表识别号
         string FID = "160114000008";
         #region 必备的配置代码

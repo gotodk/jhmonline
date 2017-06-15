@@ -17,9 +17,9 @@ public partial class menu_pub_edit : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //验证权限
-        //AuthComm.chekcAuth_fromsession("1", UserSession.最终权值_后台菜单权限, true);
+        AuthComm.chekcAuth_fromsession("1", UserSession.最终权值_后台菜单权限, true);
 
-        if(!IsPostBack)
+        if (!IsPostBack)
         {
             //加载菜单  
             ReLoadNode();

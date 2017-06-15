@@ -22,6 +22,8 @@ public partial class adminht_baseset_edit_tables_pz : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        //验证权限
+        AuthComm.chekcAuth_fromsession("1", UserSession.最终权值_后台菜单权限, true);
         //识别号
         //string FID = "150919000006";
         string FID = Request["pzid"].ToString();

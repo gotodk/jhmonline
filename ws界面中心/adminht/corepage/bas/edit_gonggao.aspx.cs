@@ -24,6 +24,9 @@ public partial class bas_edit_gonggao : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        //验证权限
+        AuthComm.chekcAuth_fromsession("4", UserSession.最终权值_后台菜单权限, true);
+
         //表单识别号
         string FID = "160921000058";
         #region 必备的配置代码
